@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>  
+	<name>teo_robot</name>
+	<version>0.1.0</version>
+
+	<description>
+     The teo_robot metapackage contains the ROS nodes developed for TEO humanoid robot.
+  </description>
+
+	<maintainer email="mingoesteban@gmail.com">Domingo Esteban</maintainer>
+	<license>BSD</license>
+
+	<author email="mingoesteban@gmail.com">Domingo Esteban</author>
+
+  <url type="repository">https://github.com/roboticslab-uc3m/teo_robot</url>
+  <url type="bugtracker">https://github.com/roboticslab-uc3m/teo_robot/issues</url>
+
+	<buildtool_depend>catkin</buildtool_depend>
+
+	<run_depend>teo_description</run_depend>
+
+	<export>
+    <metapackage/>
+	</export>
+
+</package>
