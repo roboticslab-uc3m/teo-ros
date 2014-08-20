@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<package>
+  <name>teo_description</name>
+  <version>0.0.1</version>
+
+  <description> teo_description package
+    This package contains xacro files to generate urdf file for teo humanoid robot.
+    It also includes some useful files, like display.launch file
+
+    RoboticsLab, University Carlos III of Madrid
+  </description>
+
+  <maintainer email="mingo.esteban@gmail.com">Domingo Esteban</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/teo_description</url>
+  <url type="website">http://roboticslab.uc3m.es</url>
+
+  <author email="mingo.esteban@gmail.com">Domingo Esteban</author>
+
+  <!-- Dependencies can be catkin packages or system dependencies -->
+  <!-- Use build_depend for packages you need at compile time: -->
+    <build_depend>urdf</build_depend>
+
+  <!-- Use buildtool_depend for build tool packages: -->
+    <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Use run_depend for packages you need at runtime: -->
+    <run_depend>urdf</run_depend>
+
+  <!-- Use test_depend for packages you need only for testing: -->
+  <!--   <test_depend>gtest</test_depend> -->
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>

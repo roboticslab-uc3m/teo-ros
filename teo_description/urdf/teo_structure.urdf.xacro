@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!-- 
+
+  ROS urdf definition of TEO humanoid robot using xacro
+
+  RoboticsLab, University Carlos III of Madrid
+
+  Joint names and properties are according to REP-120:
+  Coordinate Frames for Humanoids Robots
+
+  http://ros.org/reps/rep-0120.html
+
+  TODO: I don't have info about waist_yaw and waist_pitch lower and upper angles
+  TODO: Some nodes need to publish /map, /odom, /base_footprint, etc.
+  TODO: No r_gripper l_gripper yet (just commented)    
+
+-->
+
+<robot name="teo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<!-- Include useful constants -->
+<xacro:include filename="$(find teo_description)/urdf/others/teo_constants.xacro" />
+<xacro:include filename="$(find teo_description)/urdf/others/teo_transmission.xacro" />
+
+<!-- **** Torso **** -->
+
+  <!-- base_link is rigidly attached to the robot root body.
+  It is recommended to choose the robot waist as its root body -->
+  <link name="base_link" />
+
+<!--***************
+    **** JOINTS ****
+    ***************-->
+
+<!-- **** Fictitious joints **** -->
+
+  <joint name="base_joint" type="fixed">
+    <child link="waist"/>
+    <parent link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+
+ <!-- Definitions of parts of the robot body -->
+ <xacro:include filename="$(find teo_description)/urdf/legs/leg.urdf.xacro" />
+ <xacro:include filename="$(find teo_description)/urdf/torso/torso.urdf.xacro" />
+
+
+<!--****************
+    **** GAZEBO ****
+    ****************-->
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find teo_description)/urdf/teo_humanoid.gazebo.xacro" />
+
+  <xacro:gazebo_torso/>
+  <xacro:gazebo_legs_links side="l" reflect="1"/>
+  <xacro:gazebo_legs_links side="r" reflect="-1"/>
+
+</robot>

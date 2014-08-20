@@ -1,0 +1,16 @@
+<?xml version="1.0"?>                                                                                 
+<!--                                                                                                  
+                                                                                                      
+  ROS xacro constants used in the generation of TEO humanoid robot URDF using xacro                                               
+                                                                                                      
+  RoboticsLab, University Carlos III of Madrid                                                        
+                                                                                                      
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  
+ <property name="deg_to_rad" value="0.01745329251994329577" />
+ <property name="pi" value="3.1415926535897931"/>
+ <property name="pi_2" value="1.5707963267948966"/>
+
+</robot>
