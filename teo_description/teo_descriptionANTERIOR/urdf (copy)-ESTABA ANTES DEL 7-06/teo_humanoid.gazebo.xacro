@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<!-- ros_control plugin -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/teo</robotNamespace>
+		</plugin>
+	</gazebo>
+
+
+
+  <xacro:macro name="gazebo_torso" params="">
+		<gazebo reference="torso">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Black</material>
+		</gazebo>
+	</xacro:macro>
+
+  <xacro:macro name="gazebo_legs_links" params="side reflect">
+		<gazebo reference="${side}_femur_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Orange</material>
+		</gazebo>
+
+		<!--gazebo reference="${side}_femur_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Black</material>
+		</gazebo-->
+
+  </xacro:macro>  
+
+ 
+
+
+</robot>

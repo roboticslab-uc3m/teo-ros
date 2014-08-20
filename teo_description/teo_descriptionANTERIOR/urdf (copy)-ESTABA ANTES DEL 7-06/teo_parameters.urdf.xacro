@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<!--
+  TEO parameters
+
+  Author: Domingo Esteban
+  RoboticsLab, University Carlos III of Madrid
+
+  Units: Meters (m) and radians (rad)
+
+  BUG:  Property tags cannot be declared inside of a xacro:macro
+  TODO: The effort limits and velocity limits are wrong.
+        It's necesary to update them to the real values
+-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<xacro:macro name="teo_parameters">
+
+	<!-- TEO minimum angles -->
+	<xacro:property name="hip_yaw_lower" value="-0.523598775598299" />
+	<xacro:property name="hip_roll_lower" value="-2.094395102393195" />
+	<xacro:property name="hip_pitch_lower" value="-0.698131700797732" />
+	<xacro:property name="knee_pitch_lower" value="0.0" />
+	<xacro:property name="ankle_pitch_lower" value="-1.483529864195180" />
+	<xacro:property name="ankle_roll_lower" value="-0.349065850398866" />
+	<xacro:property name="waist_yaw_lower" value="0.0" />
+	<xacro:property name="waist_pitch_lower" value="0.0" />
+	<xacro:property name="shoulder_pitch_lower" value="-3.141592653589793" />
+	<xacro:property name="shoulder_roll_lower" value="-0.785398163397448" />
+	<xacro:property name="shoulder_yaw_lower" value="-1.047197551196598" />
+	<xacro:property name="elbow_pitch_lower" value="-1.745329251994330" />
+	<xacro:property name="wrist_yaw_lower" value="-1.832595714594046" />
+	<xacro:property name="wrist_pitch_lower" value="-0.698131700797732" />
+
+	<!-- TEO maximum angles -->
+	<xacro:property name="hip_yaw_upper" value="0.418879020478639" />
+	<xacro:property name="hip_roll_upper" value="0.785398163397448" />
+	<xacro:property name="hip_pitch_upper" value="0.523598775598299" />
+	<xacro:property name="knee_pitch_upper" value="0.570796326794897" />
+	<xacro:property name="ankle_pitch_upper" value="1.483529864195180" />
+	<xacro:property name="ankle_roll_upper" value="0.349065850398866" />
+	<xacro:property name="waist_yaw_upper" value="0.0" />
+	<xacro:property name="waist_pitch_upper" value="0.0" />
+	<xacro:property name="shoulder_pitch_upper" value="3.141592653589793" />
+	<xacro:property name="shoulder_roll_upper" value="2.094395102393195" />
+	<xacro:property name="shoulder_yaw_upper" value="1.047197551196598" />
+	<xacro:property name="elbow_pitch_upper" value="1.745329251994330" />
+	<xacro:property name="wrist_yaw_upper" value="1.832595714594046" />
+	<xacro:property name="wrist_pitch_upper" value="0.959931088596881" />
+
+	<!-- TEO effort limit of the angles -->
+	<xacro:property name="hip_yaw_effort" value="30.0" />
+	<xacro:property name="hip_roll_effort" value="30.0" />
+	<xacro:property name="hip_pitch_effort" value="30.0" />
+	<xacro:property name="knee_pitch_effort" value="30.0" />
+	<xacro:property name="ankle_pitch_effort" value="30.0" />
+	<xacro:property name="ankle_roll_effort" value="30.0" />
+	<xacro:property name="waist_yaw_effort" value="30.0" />
+	<xacro:property name="waist_pitch_effort" value="30.0" />
+	<xacro:property name="shoulder_pitch_effort" value="30.0" />
+	<xacro:property name="shoulder_roll_effort" value="30.0" />
+	<xacro:property name="shoulder_yaw_effort" value="30.0" />
+	<xacro:property name="elbow_pitch_effort" value="30.0" />
+	<xacro:property name="wrist_yaw_effort" value="30.0" />
+	<xacro:property name="wrist_pitch_effort" value="30.0" />
+
+	<!-- TEO velocity limit of the angles-->
+	<xacro:property name="hip_yaw_velocity" value="3.0" />
+	<xacro:property name="hip_roll_velocity" value="3.0" />
+	<xacro:property name="hip_pitch_velocity" value="3.0" />
+	<xacro:property name="knee_pitch_velocity" value="3.0" />
+	<xacro:property name="ankle_pitch_velocity" value="3.0" />
+	<xacro:property name="ankle_roll_velocity" value="3.0" />
+	<xacro:property name="waist_yaw_velocity" value="3.0" />
+	<xacro:property name="waist_pitch_velocity" value="3.0" />
+	<xacro:property name="shoulder_pitch_velocity" value="3.0" />
+	<xacro:property name="shoulder_roll_velocity" value="3.0" />
+	<xacro:property name="shoulder_yaw_velocity" value="3.0" />
+	<xacro:property name="elbow_pitch_velocity" value="3.0" />
+	<xacro:property name="wrist_yaw_velocity" value="3.0" />
+	<xacro:property name="wrist_pitch_velocity" value="3.0" />
+
+
+	<!-- TEO torso -->
+	<xacro:property name="waist_link1" value="0.0" />
+	<xacro:property name="waist_link2" value="0.287" />
+	<xacro:property name="torso_link1" value="0.0" />
+	<xacro:property name="torso_link2" value="0.06" />
+
+
+	<!-- TEO legs -->
+	<xacro:property name="leg_link1" value="0.146" />
+	<xacro:property name="leg_link2" value="0.33" />
+	<xacro:property name="leg_link3" value="0.3" />
+	<xacro:property name="leg_link4" value="0.033" />
+	<xacro:property name="leg_link5" value="0.124" />
+
+	<!-- TEO arms -->
+	<xacro:property name="chest_link2" value="0.0" />
+	<xacro:property name="chest_link2" value="0.245" />
+	<xacro:property name="arm_link2" value="0.340" />
+	<xacro:property name="arm_link2" value="0.337" />
+	<xacro:property name="arm_link2" value="0.210" />
+
+</xacro:macro>
+
+</robot>

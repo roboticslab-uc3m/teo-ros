@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!--
+    RoboticsLab, University Carlos III of Madrid
+
+    Complete visualization of TEO's kinematic structure
+
+    TODO: Review macros, properties and math to optimize the xacro file.
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <material name="LightGrey">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+     
+  <xacro:macro name="insert_visualization_torso" params="">
+    <visual>
+      <!-- one box -->
+      <!--origin xyz="0 0 0.1" rpy="0 0 0"/-->
+      <origin xyz="0 0 0.03" rpy="0 0 0"/>
+      <geometry>
+        <!--box size="0.1 0.45 0.292"/-->
+        <mesh filename="package://teo_description/meshes/torso/chest_reduced2.dae"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+  </xacro:macro>
+       
+  <xacro:macro name="insert_visualization_waist" params="">
+    <!--visual>
+	    <geometry>
+        <mesh filename="package://teo_description/meshes/torso/waist.dae"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    </visual-->
+  </xacro:macro>
+    
+  <xacro:macro name="insert_visualization_waist_yaw" params="">
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+         <!--sphere radius="1.0"/-->
+		     <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_waist_pitch" params="">
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi_2} 0 0"/>
+      <geometry>
+        <!--sphere radius="1.0"/-->
+		    <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+  </xacro:macro>
+
+
+  <xacro:macro name="insert_visualization_hip_yaw" params="side reflect">
+    <visual>
+	    <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_axialhip.dae"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 ${reflect*leg_link1} 0"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_hip_roll" params="side reflect">
+    <visual>
+	    <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_hip.dae"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_femur_link" params="side reflect">
+    <visual>
+	    <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_thigh.dae"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0.013 0 -${leg_link2}"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_tibia_link" params="side reflect">
+    <visual>
+	    <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_tibia.dae"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="-0.013 ${reflect*-(leg_link4)} -${leg_link3}"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_ankle_pitch" params="side reflect">
+    <visual>
+	    <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_ankle.dae"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_astragalus_link" params="side reflect">
+    <visual>
+	    <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_foot.dae"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_sole" params="side reflect">
+    <!--visual>
+      <geometry>
+        <box size="0.2 0.1 0.01"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0.05 0 0"/>
+    </visual-->
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_shoulder_pitch" params="side reflect">
+    <!--visual>
+      <geometry>
+        <box size="0.1 ${arm_link1} 0.1"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="${chest_link1} ${arm_link1/2*reflect} ${chest_link2}"/>
+    </visual-->
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_shoulder_yaw" params="side reflect">
+    <visual>
+      <geometry>
+        <!--box size="0.08 0.08 ${arm_link2}"/-->
+        <!--mesh filename="package://teo_description/meshes/legs/${side}_foot.dae"/-->
+        <mesh filename="package://teo_description/meshes/arms/${side}_arm.dae"/>
+      </geometry>
+      <material name="grey"/>
+      <!--origin rpy="0 0 0" xyz="0 0 -${arm_link2/2}"/-->
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link2/2-0.045}"/>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_elbow_pitch" params="side reflect">
+    <visual>
+      <geometry>
+        <!--box size="0.06 0.06 ${arm_link3}"/-->
+        <mesh filename="package://teo_description/meshes/arms/${side}_forearm.dae"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link3/2}"/>
+    </visual>
+  </xacro:macro>
+
+</robot>

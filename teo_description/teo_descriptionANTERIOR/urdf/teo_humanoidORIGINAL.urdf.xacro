@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="teo">
+
+<!--
+  ROS urdf definition of TEO humanoid robot
+  
+  Author: Domingo Esteban
+  RoboticsLab, University Carlos III de Madrid
+  
+  This file loads TEO model with a basic visualization.
+
+  If you want to convert this xacro file into an urdf file:
+  $ rosrun xacro xacro.py teo_humanoid.urdf.xacro > teo_humanoid.urdf
+-->
+
+  <xacro:include filename="$(find teo_description)/urdf/teo_structure.urdf.xacro" />
+  <xacro:include filename="$(find teo_description)/urdf/simple_visual.xacro" />
+</robot>

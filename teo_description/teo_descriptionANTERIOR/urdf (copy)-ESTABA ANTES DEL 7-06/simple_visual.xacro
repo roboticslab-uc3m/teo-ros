@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<!--
+    RoboticsLab, University Carlos III of Madrid
+
+    Simple visualization of TEO's kinematic structure
+    Ideal for faster simulation or solve resources limitations
+
+    TODO: Review macros, properties and math to optimize the xacro file.
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <material name="LightGrey">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+     
+  <xacro:macro name="insert_visualization_torso" params="">
+    <visual>
+      <!-- one box -->
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.42 0.292"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.42 0.292"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+       
+  <xacro:macro name="insert_visualization_waist" params="">
+    <visual>
+      <origin xyz="0 0 0.0905" rpy="0 0 0"/>
+      <geometry>
+	      <box size="0.1 0.5 0.01"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.1755" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.15"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0905" rpy="0 0 0"/>
+      <geometry>
+	      <box size="0.1 0.5 0.01"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0.1755" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.15"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+    
+  <xacro:macro name="insert_visualization_waist_yaw" params="">
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+         <!--sphere radius="1.0"/-->
+		     <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+         <!--sphere radius="1.0"/-->
+		     <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_waist_pitch" params="">
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi_2} 0 0"/>
+      <geometry>
+        <!--sphere radius="1.0"/-->
+		    <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi_2} 0 0"/>
+      <geometry>
+        <!--sphere radius="1.0"/-->
+		    <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+
+
+  <xacro:macro name="insert_visualization_hip_yaw" params="side reflect">
+    <visual>
+      <origin xyz="0 ${reflect*leg_link1} 0.045" rpy="0 1.571 0"/>
+      <geometry>
+		    <cylinder radius="0.045" length="0.13"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 ${reflect*leg_link1} 0.045" rpy="0 1.571 0"/>
+      <geometry>
+		    <cylinder radius="0.045" length="0.13"/>
+      </geometry>
+    </collision>
+    <!--visual>
+	    <geometry>
+	      <box size="0.1 ${leg_link1} 0.01"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 ${reflect*leg_link1/2} 0"/>
+    </visual>
+    <collision>
+	    <geometry>
+	      <box size="0.1 ${leg_link1} 0.01"/>
+	    </geometry>
+	    <origin rpy="0 0 0" xyz="0 ${reflect*leg_link1/2} 0"/>
+    </collision-->
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_femur_link" params="side reflect">
+    <visual>
+	    <geometry>
+	      <box size="0.1 0.1 ${leg_link2}"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 0 -${leg_link2/2}"/>
+    </visual>
+    <collision>
+	    <geometry>
+	      <box size="0.1 0.1 ${leg_link2}"/>
+	    </geometry>
+	    <origin rpy="0 0 0" xyz="0 0 -${leg_link2/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_tibia_link" params="side reflect">
+    <visual>
+	    <geometry>
+	      <box size="0.08 0.08 ${leg_link3}"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 0 -${leg_link3/2}"/>
+    </visual>
+    <visual>
+	    <geometry>
+	      <box size="0.05 ${leg_link4} 0.05"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 ${reflect*-leg_link4} -${leg_link3-0.05/2}"/>
+    </visual>
+    <collision>
+	    <geometry>
+	      <box size="0.08 0.08 ${leg_link3}"/>
+	    </geometry>
+	    <origin rpy="0 0 0" xyz="0 0 -${leg_link3/2}"/>
+    </collision>
+    <collision>
+	    <geometry>
+	      <box size="0.05 ${leg_link4} 0.05"/>
+	    </geometry>
+	    <origin rpy="0 0 0" xyz="0 ${reflect*-leg_link4} -${leg_link3-0.05/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_ankle_pitch" params="side reflect">
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_astragalus_link" params="side reflect">
+    <visual>
+	    <geometry>
+	      <box size="0.08 0.08 ${leg_link5}"/>
+	    </geometry>
+	    <material name="grey"/>
+	    <origin rpy="0 0 0" xyz="0 0 -${leg_link5/2}"/>
+    </visual>
+    <collision>
+	    <geometry>
+	      <box size="0.08 0.08 ${leg_link5}"/>
+	    </geometry>
+	    <origin rpy="0 0 0" xyz="0 0 -${leg_link5/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_sole" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.2 0.1 0.01"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0.05 0 ${-0.005-leg_link5}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 0.1 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.05 0 ${-0.005-leg_link5}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_shoulder_pitch" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.1 ${arm_link1} 0.1"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="${chest_link1} ${arm_link1/2*reflect} ${chest_link2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 ${arm_link1} 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="${chest_link1} ${arm_link1/2*reflect} ${chest_link2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_shoulder_yaw" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 ${arm_link2}"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link2/2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.08 0.08 ${arm_link2}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link2/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_elbow_pitch" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.06 0.06 ${arm_link3}"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link3/2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.06 0.06 ${arm_link3}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link3/2}"/>
+    </collision>
+  </xacro:macro>
+
+</robot>

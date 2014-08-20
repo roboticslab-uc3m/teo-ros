@@ -1,0 +1,11 @@
+This tool provides information about SDF files.
+
+gzsdf <command>
+
+Commands:
+    describe [SDF version]     Print the SDF format.
+    convert [file]             In place conversion to the latest format.
+    doc [SDF version]          Print HTML SDF.
+    check [file] [SDF version] Check the SDF format for the given file.
+    print [SDF version]         Prints SDF, useful for  debugging and as a conversion tool.
+

@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+
+<!-- 
+
+  ROS urdf definition of TEO humanoid robot using xacro
+
+  RoboticsLab, University Carlos III of Madrid
+
+  Joint names and properties are according to REP-120:
+  Coordinate Frames for Humanoids Robots
+
+  http://ros.org/reps/rep-0120.html
+
+  TODO: I don't have info about waist_yaw and waist_pitch lower and upper angles
+  TODO: Some nodes need to publish /map, /odom, /base_footprint, etc.
+  TODO: No r_gripper l_gripper yet (just commented)    
+
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<!-- *** TEO PARAMETERS -->
+
+<!-- TEO minimum angles -->
+	<xacro:property name="hip_yaw_lower" value="-0.5235987875598299" />
+	<xacro:property name="hip_roll_lower" value="-2.094395102393195" />
+	<xacro:property name="hip_pitch_lower" value="-0.698131700797732" />
+	<xacro:property name="knee_pitch_lower" value="0.0" />
+	<xacro:property name="ankle_pitch_lower" value="-1.483529864195180" />
+	<xacro:property name="ankle_roll_lower" value="-0.349065850398866" />
+	<xacro:property name="waist_yaw_lower" value="-1.570796326794897" />
+	<xacro:property name="waist_pitch_lower" value="0.0" />
+	<xacro:property name="shoulder_pitch_lower" value="-3.141592653589793" />
+	<xacro:property name="shoulder_roll_lower" value="-0.785398163397448" />
+	<xacro:property name="shoulder_yaw_lower" value="-1.047197551196598" />
+	<xacro:property name="elbow_pitch_lower" value="-1.745329251994330" />
+	<xacro:property name="wrist_yaw_lower" value="-0.698131700797732" />
+	<xacro:property name="wrist_pitch_lower" value="-1.832595714594046" />
+
+	<!-- TEO maximum angles -->
+	<xacro:property name="hip_yaw_upper" value="0.418879020478639" />
+	<xacro:property name="hip_roll_upper" value="0.785398163397448" />
+	<xacro:property name="hip_pitch_upper" value="0.523598775598299" />
+	<xacro:property name="knee_pitch_upper" value="1.570796326794897" />
+	<xacro:property name="ankle_pitch_upper" value="1.483529864195180" />
+	<xacro:property name="ankle_roll_upper" value="0.349065850398866" />
+	<xacro:property name="waist_yaw_upper" value="1.570796326794897" />
+	<xacro:property name="waist_pitch_upper" value="0.785398163397448" />
+	<xacro:property name="shoulder_pitch_upper" value="3.141592653589793" />
+	<xacro:property name="shoulder_roll_upper" value="2.094395102393195" />
+	<xacro:property name="shoulder_yaw_upper" value="1.047197551196598" />
+	<xacro:property name="elbow_pitch_upper" value="1.745329251994330" />
+	<xacro:property name="wrist_yaw_upper" value="0.959931088596881" />
+	<xacro:property name="wrist_pitch_upper" value="1.832595714594046" />
+
+	<!-- TEO effort limit of the angles -->
+	<xacro:property name="hip_yaw_effort" value="30.0" />
+	<xacro:property name="hip_roll_effort" value="30.0" />
+	<xacro:property name="hip_pitch_effort" value="30.0" />
+	<xacro:property name="knee_pitch_effort" value="30.0" />
+	<xacro:property name="ankle_pitch_effort" value="30.0" />
+	<xacro:property name="ankle_roll_effort" value="30.0" />
+	<xacro:property name="waist_yaw_effort" value="30.0" />
+	<xacro:property name="waist_pitch_effort" value="30.0" />
+	<xacro:property name="shoulder_pitch_effort" value="30.0" />
+	<xacro:property name="shoulder_roll_effort" value="30.0" />
+	<xacro:property name="shoulder_yaw_effort" value="30.0" />
+	<xacro:property name="elbow_pitch_effort" value="30.0" />
+	<xacro:property name="wrist_yaw_effort" value="30.0" />
+	<xacro:property name="wrist_pitch_effort" value="30.0" />
+
+	<!-- TEO velocity limit of the angles-->
+	<xacro:property name="hip_yaw_velocity" value="3.0" />
+	<xacro:property name="hip_roll_velocity" value="3.0" />
+	<xacro:property name="hip_pitch_velocity" value="3.0" />
+	<xacro:property name="knee_pitch_velocity" value="3.0" />
+	<xacro:property name="ankle_pitch_velocity" value="3.0" />
+	<xacro:property name="ankle_roll_velocity" value="3.0" />
+	<xacro:property name="waist_yaw_velocity" value="3.0" />
+	<xacro:property name="waist_pitch_velocity" value="3.0" />
+	<xacro:property name="shoulder_pitch_velocity" value="3.0" />
+	<xacro:property name="shoulder_roll_velocity" value="3.0" />
+	<xacro:property name="shoulder_yaw_velocity" value="3.0" />
+	<xacro:property name="elbow_pitch_velocity" value="3.0" />
+	<xacro:property name="wrist_yaw_velocity" value="3.0" />
+	<xacro:property name="wrist_pitch_velocity" value="3.0" />
+
+	<!-- TEO damping of the joints-->
+	<xacro:property name="hip_yaw_damping" value="0.0" />
+	<xacro:property name="hip_roll_damping" value="0.0" />
+	<xacro:property name="hip_pitch_damping" value="0.0" />
+	<xacro:property name="knee_pitch_damping" value="0.0" />
+	<xacro:property name="ankle_pitch_damping" value="0.0" />
+	<xacro:property name="ankle_roll_damping" value="0.0" />
+	<xacro:property name="waist_yaw_damping" value="0.0" />
+	<xacro:property name="waist_pitch_damping" value="0.0" />
+	<xacro:property name="shoulder_pitch_damping" value="0.0" />
+	<xacro:property name="shoulder_roll_damping" value="0.0" />
+	<xacro:property name="shoulder_yaw_damping" value="0.0" />
+	<xacro:property name="elbow_pitch_damping" value="0.0" />
+	<xacro:property name="wrist_yaw_damping" value="0.0" />
+	<xacro:property name="wrist_pitch_damping" value="0.0" />
+
+	<!-- TEO friction of the joints--> <!-- IT'S NOT USED IN GAZEBO-->
+	<xacro:property name="hip_yaw_friction" value="0.0" />
+	<xacro:property name="hip_roll_friction" value="0.0" />
+	<xacro:property name="hip_pitch_friction" value="0.0" />
+	<xacro:property name="knee_pitch_friction" value="0.0" />
+	<xacro:property name="ankle_pitch_friction" value="0.0" />
+	<xacro:property name="ankle_roll_friction" value="0.0" />
+	<xacro:property name="waist_yaw_friction" value="0.0" />
+	<xacro:property name="waist_pitch_friction" value="0.0" />
+	<xacro:property name="shoulder_pitch_friction" value="0.0" />
+	<xacro:property name="shoulder_roll_friction" value="0.0" />
+	<xacro:property name="shoulder_yaw_friction" value="0.0" />
+	<xacro:property name="elbow_pitch_friction" value="0.0" />
+	<xacro:property name="wrist_yaw_friction" value="0.0" />
+	<xacro:property name="wrist_pitch_friction" value="0.0" />
+
+	<!-- TEO torso -->
+	<xacro:property name="waist_link1" value="0.0" />
+	<xacro:property name="waist_link2" value="0.287" />
+	<xacro:property name="torso_link1" value="0.0" />
+	<xacro:property name="torso_link2" value="0.06" />
+
+
+	<!-- TEO legs -->
+	<xacro:property name="leg_link1" value="0.146" />
+	<xacro:property name="leg_link2" value="0.33" />
+	<xacro:property name="leg_link3" value="0.3" />
+	<xacro:property name="leg_link4" value="0.033" />
+	<xacro:property name="leg_link5" value="0.124" />
+
+	<!-- TEO arms -->
+	<xacro:property name="chest_link1" value="0.0" />
+	<xacro:property name="chest_link2" value="0.245" />
+	<xacro:property name="arm_link1" value="0.340" />
+	<xacro:property name="arm_link2" value="0.337" />
+	<xacro:property name="arm_link3" value="0.210" />
+
+  <!-- Useful parameters -->
+  <xacro:property name="pi" value="3.1415926535897931"/>
+  <xacro:property name="pi_2" value="1.5707963267948966"/>
+
+  <!-- Joints reductions -->
+  <xacro:property name="leg_reduction" value="1.0" />
+  <xacro:property name="arm_reduction" value="1.0" />
+  <xacro:property name="waist_reduction" value="1.0" />
+
+
+
+
+
+<!--***************
+    **** LINKS ****
+    ***************-->
+
+
+<!-- **** Torso **** -->
+
+  <!-- base_link is rigidly attached to the robot root body.
+  It is recommended to choose the robot waist as its root body -->
+  <link name="base_link" />
+
+  <!--link name="torso" >
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.61075"/>
+      <inertia
+			  ixx="0.09" ixy="0.219" ixz="-0.009"
+			  iyy="0.09" iyz="-0.004" 
+			  izz="0.25" />
+    </inertial>
+
+    <xacro:insert_visualization_torso/>
+    <xacro:insert_visualization_shoulder_pitch side="r" reflect="-1"/>
+    <xacro:insert_visualization_shoulder_pitch side="l" reflect="1"/>
+  </link-->
+
+  <link name="waist" >
+    <inertial>
+      <origin xyz="0.0 0.0 0.0337" rpy="0 0 0"/>
+      <mass value="25.7044"/>
+      <inertia 
+			  ixx="0.019" ixy="0.000" ixz="0.000"
+				iyy="0.018" iyz="0.000"
+				izz="0.008" />
+    </inertial>
+    <xacro:insert_visualization_waist/>
+    <xacro:insert_visualization_hip_yaw side="r" reflect="-1"/>
+    <xacro:insert_visualization_hip_yaw side="l" reflect="1"/>
+  </link>
+
+  <link name="waist_yaw_link" >
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia
+			  ixx="1.000" ixy="0.000" ixz="0.000"
+				iyy="1.000" iyz="0.000"
+				izz="1.000" />
+    </inertial>
+    <xacro:insert_visualization_waist_yaw/>
+  </link>
+
+  <link name="waist_pitch_link" >
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia
+			  ixx="1.000" ixy="0.000" ixz="0.000"
+				iyy="1.000" iyz="0.000"
+				izz="1.000" />
+    </inertial>
+    <xacro:insert_visualization_waist_pitch/>
+  </link>
+
+
+<!-- **** Legs **** -->
+
+  <xacro:macro name="legs_links" params="side reflect">
+    <link name="${side}_hip_yaw_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia
+				  ixx="1.000" ixy="0.000" ixz="0.000"
+					iyy="1.000" iyz="0.000"
+					izz="1.000" />
+      </inertial>
+    </link>
+    <link name="${side}_hip_roll_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia
+				  ixx="1.000" ixy="0.000" ixz="0.000"
+				  iyy="1.000" iyz="0.000"
+					izz="1.000" />
+      </inertial>
+			<xacro:insert_visualization_hip_roll side="${side}" reflect="{reflect}"/>
+    </link>
+    <link name="${side}_femur_link">
+      <inertial>
+        <origin xyz="0.033 ${reflect*leg_link4+0.001} ${leg_link3+leg_link2-0.443}" rpy="0 0 0"/>
+        <mass value="1.844"/>
+        <inertia
+				  ixx="0.020" ixy="6.052e-5" ixz="7.948e-4"
+					iyy="0.025" iyz="6.454e-4"
+					izz="0.013" />
+      </inertial>
+      <xacro:insert_visualization_femur_link side="${side}" reflect="${reflect}"/>
+    </link>
+    <link name="${side}_tibia_link">
+      <inertial>
+        <origin xyz="-0.027 ${reflect*leg_link4-0.005} ${leg_link3-0.16368}" rpy="0 0 0"/>
+        <mass value="2.0817"/>
+        <inertia
+				  ixx="0.020" ixy="6.052e-5" ixz="-7.498e-4"
+				  iyy="0.025" iyz="6.454e-4"
+					izz="0.013" />
+      </inertial>
+      <xacro:insert_visualization_tibia_link side="${side}" reflect="${reflect}"/>
+    </link>
+    <link name="${side}_ankle_pitch_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia
+				  ixx="1.000" ixy="0.000" ixz="0.000"
+					iyy="1.000" iyz="0.000"
+					izz="1.000" />
+      </inertial>
+      <xacro:insert_visualization_ankle_pitch side="${side}" reflect="${reflect}"/>
+    </link>
+    <link name="${side}_astragalus_link">
+      <inertial>
+        <origin xyz="3.026e-3 ${reflect*3.5e-3} -9.323e-3" rpy="0 0 0"/>
+        <mass value="3.8994"/>
+        <inertia
+				  ixx="0.062" ixy="-1.417e-4" ixz="-0.004"
+					iyy="0.059" iyz="0.002"
+					izz="0.011" />
+      </inertial>
+      <xacro:insert_visualization_astragalus_link side="${side}" reflect="${reflect}"/>
+      <xacro:insert_visualization_sole side="${side}" reflect="${reflect}"/> <!-- OJO, falta bajarlo -link5/2-->
+    </link>
+    <link name="${side}_sole">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia
+				  ixx="1.000" ixy="0.000" ixz="0.000"
+					iyy="1.000" iyz="0.000"
+					izz="1.000" />
+      </inertial>
+    </link>
+
+  </xacro:macro>
+
+  <xacro:legs_links side="l" reflect="1"/>
+  <xacro:legs_links side="r" reflect="-1"/>  
+
+
+
+<!-- **** Arms **** -->
+  <xacro:macro name="arms_links" params="side reflect">
+    <link name="${side}_shoulder_pitch_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia
+				  ixx="1.000" ixy="0.000" ixz="0.000"
+					iyy="1.000" iyz="0.000"
+					izz="1.000" />
+      </inertial>
+    </link>
+    <link name="${side}_shoulder_roll_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia
+				  ixx="1.000" ixy="0.000" ixz="0.000"
+					iyy="1.000" iyz="0.000"
+					izz="1.000" />
+      </inertial>
+    </link>
+    <link name="${side}_shoulder_yaw_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="1.750625"/>
+        <inertia
+				  ixx="7.000e-3" ixy="2.148e-5" ixz="3.931e-5"
+					iyy="7.000e-3" iyz="1.558e-5"
+					izz="8.195e-4" />
+      </inertial>
+      <xacro:insert_visualization_shoulder_yaw side="${side}" reflect="${reflect}"/>
+    </link>
+    <link name="${side}_elbow_pitch_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="2.396"/>
+        <inertia
+				  ixx="3.000e-3" ixy="9.570e-4" ixz="6.522e-6"
+					iyy="3.000e-3" iyz="3.778e-5"
+					izz="3.000e-3" />
+      </inertial>
+      <xacro:insert_visualization_elbow_pitch side="${side}" reflect="${reflect}"/>
+    </link>
+    <link name="${side}_wrist_yaw_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="0.005"/>
+        <inertia
+				  ixx="1.000" ixy="0.000" ixz="0.000"
+					iyy="1.000" iyz="0.000"
+					izz="1.000" />
+      </inertial>
+    </link>
+    <link name="${side}_wrist_pitch_link">
+      <inertial>
+        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <mass value="0.3"/>
+        <inertia
+				  ixx="3.400e-4" ixy="0.000" ixz="0.000"
+					iyy="3.125e-4" iyz="0.000"
+					izz="1.525e-4" />
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <!--xacro:arms_links side="l" reflect="1"/>
+  <xacro:arms_links side="r" reflect="-1"/-->
+
+
+<!--***************
+    **** JOINTS ****
+    ***************-->
+
+<!-- **** Torso **** -->
+
+  <joint name="waist_yaw" type="revolute">
+    <parent link="waist"/>
+    <child link="waist_yaw_link"/>
+    <origin xyz="${waist_link1} 0 ${waist_link2}" rpy="0 0 0" />
+    <axis xyz="0 0 1"/>
+    <limit velocity="${waist_yaw_velocity}" effort="${waist_yaw_effort}" lower="${waist_yaw_lower}" upper="${waist_yaw_upper}"/>
+  </joint>
+
+  <joint name="waist_pitch" type="revolute">
+    <parent link="waist_yaw_link"/>
+    <child link="waist_pitch_link"/>
+    <origin xyz="-${torso_link1} 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0"/>
+    <limit velocity="${waist_pitch_velocity}" effort="${waist_pitch_effort}" lower="${waist_pitch_lower}" upper="${waist_pitch_upper}"/>
+  </joint>
+
+  <!--joint name="torso_joint" type="fixed">
+    <parent link="waist_pitch_link"/>
+    <child link="torso"/>
+    <origin xyz="0 0 ${torso_link2}" rpy="0 0 0" />
+  </joint-->
+
+  <xacro:waist_joint_simple_transmission axis="yaw" reduction="${waist_reduction}"/>
+  <xacro:waist_joint_simple_transmission axis="pitch" reduction="${waist_reduction}"/>
+
+
+<!-- **** Legs **** -->
+
+  <xacro:macro name="legs_joints" params="side reflect">
+    <joint name="${side}_hip_yaw" type="revolute">
+      <parent link="waist"/>
+      <child link="${side}_hip_yaw_link"/>
+      <origin xyz="0 ${reflect*leg_link1} 0" rpy="0 0 0"/> <!--y=Leg_link1-->
+      <axis xyz="0 0 1"/>
+      <limit velocity="${hip_yaw_velocity}" effort="${hip_yaw_effort}" lower="${hip_yaw_lower}" upper="${hip_yaw_upper}"/>
+			<dynamics damping="${hip_yaw_damping}" friction="${hip_yaw_friction}"/>
+    </joint> 
+
+    <joint name="${side}_hip_roll" type="revolute">
+      <parent link="${side}_hip_yaw_link"/>
+      <child link="${side}_hip_roll_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit velocity="${hip_roll_velocity}" effort="${hip_roll_effort}" lower="${hip_roll_lower}" upper="${hip_roll_upper}"/>
+			<dynamics damping="${hip_roll_damping}" friction="${hip_roll_friction}"/>
+    </joint> 
+
+    <joint name="${side}_hip_pitch" type="revolute">
+      <parent link="${side}_hip_roll_link"/>
+      <child link="${side}_femur_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit velocity="${hip_pitch_velocity}" effort="${hip_pitch_effort}" lower="${hip_pitch_lower}" upper="${hip_pitch_upper}"/>
+			<dynamics damping="${hip_pitch_damping}" friction="${hip_pitch_friction}"/>
+    </joint> 
+
+    <joint name="${side}_knee_pitch" type="revolute">
+      <parent link="${side}_femur_link"/>
+      <child link="${side}_tibia_link"/>
+      <origin xyz="0 0 -${leg_link2}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit velocity="${knee_pitch_velocity}" effort="${knee_pitch_effort}" lower="${knee_pitch_lower}" upper="${knee_pitch_upper}"/>
+			<dynamics damping="${knee_pitch_damping}" friction="${knee_pitch_friction}"/>
+    </joint> 
+
+    <joint name="${side}_ankle_pitch" type="revolute">
+      <parent link="${side}_tibia_link"/>
+      <child link="${side}_ankle_pitch_link"/>
+      <origin xyz="0 ${reflect*-leg_link4} -${leg_link3}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit velocity="${ankle_pitch_velocity}" effort="${ankle_pitch_effort}" lower="${ankle_pitch_lower}" upper="${ankle_pitch_upper}"/>
+			<dynamics damping="${ankle_pitch_damping}" friction="${ankle_pitch_friction}"/>
+    </joint> 
+
+    <joint name="${side}_ankle_roll" type="revolute">
+      <parent link="${side}_ankle_pitch_link"/>
+      <child link="${side}_astragalus_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit velocity="${ankle_roll_velocity}" effort="${ankle_roll_effort}" lower="${ankle_roll_lower}" upper="${ankle_roll_upper}"/>
+			<dynamics damping="${ankle_roll_damping}" friction="${ankle_roll_friction}"/>
+    </joint> 
+
+    <joint name="${side}_sole_joint" type="fixed">
+      <parent link="${side}_astragalus_link"/>
+      <child link="${side}_sole"/>
+      <origin xyz="0 0 -${leg_link5}" rpy="0 0 0"/>
+    </joint> 
+
+    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="yaw" reduction="${leg_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="roll" reduction="${leg_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="pitch" reduction="${leg_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="knee" side="${side}" axis="pitch" reduction="${leg_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="ankle" side="${side}" axis="pitch" reduction="${leg_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="ankle" side="${side}" axis="roll" reduction="${leg_reduction}"/>
+
+  </xacro:macro>
+
+  <xacro:legs_joints side="l" reflect="1"/>
+  <xacro:legs_joints side="r" reflect="-1"/> 
+
+<!-- **** Arms **** -->
+  <xacro:macro name="arms_joints" params="side reflect">
+    <joint name="${side}_shoulder_pitch" type="revolute">
+      <parent link="torso"/>
+      <child link="${side}_shoulder_pitch_link"/>
+      <origin xyz="-${chest_link1} ${reflect*arm_link1} ${chest_link2}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit velocity="${shoulder_pitch_velocity}" effort="${shoulder_pitch_effort}" lower="${shoulder_pitch_lower}" upper="${shoulder_pitch_upper}"/>
+    </joint> 
+    <joint name="${side}_shoulder_roll" type="revolute">
+      <parent link="${side}_shoulder_pitch_link"/>
+      <child link="${side}_shoulder_roll_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <limit velocity="${shoulder_roll_velocity}" effort="${shoulder_roll_effort}" lower="${shoulder_roll_lower}" upper="${shoulder_roll_upper}"/>
+    </joint> 
+    <joint name="${side}_shoulder_yaw" type="revolute">
+      <parent link="${side}_shoulder_roll_link"/>
+      <child link="${side}_shoulder_yaw_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit velocity="${shoulder_yaw_velocity}" effort="${shoulder_yaw_effort}" lower="${shoulder_yaw_lower}" upper="${shoulder_yaw_upper}"/>
+    </joint>
+    <joint name="${side}_elbow_pitch" type="revolute">
+      <parent link="${side}_shoulder_yaw_link"/>
+      <child link="${side}_elbow_pitch_link"/>
+      <origin xyz="0 0 -${arm_link2}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit velocity="${elbow_pitch_velocity}" effort="${elbow_pitch_effort}" lower="${elbow_pitch_lower}" upper="${elbow_pitch_upper}"/>
+    </joint> 
+    <joint name="${side}_wrist_yaw" type="revolute">
+      <parent link="${side}_elbow_pitch_link"/>
+      <child link="${side}_wrist_yaw_link"/>
+      <origin xyz="0 0 -${arm_link3}" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit velocity="${wrist_yaw_velocity}" effort="${wrist_yaw_effort}" lower="${wrist_yaw_lower}" upper="${wrist_yaw_upper}"/>
+    </joint> 
+    <joint name="${side}_wrist_pitch" type="revolute">
+      <parent link="${side}_wrist_yaw_link"/>
+      <child link="${side}_wrist_pitch_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit velocity="${wrist_pitch_velocity}" effort="${wrist_pitch_effort}" lower="${wrist_pitch_lower}" upper="${wrist_pitch_upper}"/>
+    </joint>  
+
+    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="pitch" reduction="${arm_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="roll" reduction="${arm_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="yaw" reduction="${arm_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="elbow" side="${side}" axis="pitch" reduction="${arm_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="wrist" side="${side}" axis="yaw" reduction="${arm_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="wrist" side="${side}" axis="pitch" reduction="${arm_reduction}"/>
+  </xacro:macro>
+
+  <!--xacro:arms_joints side="l" reflect="1"/>
+  <xacro:arms_joints side="r" reflect="-1"/-->
+
+<!-- **** Fictitious joints **** -->
+
+  <joint name="base_joint" type="fixed">
+    <child link="waist"/>
+    <parent link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+
+<!-- *** Transmisions *** -->
+
+	<xacro:macro name="limb_joint_simple_transmission" params="name side axis reduction" >
+		<transmission name="${side}_${name}_${axis}_trans"> 
+			<type>transmission_interface/SimpleTransmission</type> 
+			<joint name="${side}_${name}_${axis}"/>
+			<actuator name="${side}_${name}_${axis}_motor" > 
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>${reduction}</mechanicalReduction> 
+			</actuator> 
+		</transmission> 
+	</xacro:macro> 
+
+	<xacro:macro name="waist_joint_simple_transmission" params="axis reduction" >
+		<transmission name="waist_${axis}_trans"> 
+			<type>transmission_interface/SimpleTransmission</type> 
+			<joint name="waist_${axis}" />
+			<actuator name="waist_${axis}_motor" > 
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+				<mechanicalReduction>${reduction}</mechanicalReduction> 
+			</actuator> 
+		</transmission> 
+	</xacro:macro> 
+
+
+	<!--xacro:macro name="limb_joint_simple_transmission" params="name side axis reduction" >
+		<transmission name="${side}_${name}_${axis}_trans"> 
+			<type>transmission_interface/SimpleTransmission</type> 
+			<actuator name="${side}_${name}_${axis}_motor" > 
+				<mechanicalReduction>${reduction}</mechanicalReduction> 
+			</actuator> 
+			<joint name="${side}_${name}_${axis}">
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+			</joint> 
+		</transmission> 
+	</xacro:macro> 
+
+	<xacro:macro name="waist_joint_simple_transmission" params="axis reduction" >
+		<transmission name="waist_${axis}_trans"> 
+			<type>transmission_interface/SimpleTransmission</type> 
+			<actuator name="waist_${axis}_motor" > 
+				<mechanicalReduction>${reduction}</mechanicalReduction> 
+			</actuator> 
+			<joint name="waist_${axis}" >
+				<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+			</joint> 
+		</transmission> 
+	</xacro:macro--> 
+
+
+<!--****************
+    **** GAZEBO ****
+    ****************-->
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find teo_description)/urdf/teo_humanoid.gazebo.xacro" />
+
+  <xacro:gazebo_torso/>
+  <xacro:gazebo_legs_links side="l" reflect="1"/>
+  <xacro:gazebo_legs_links side="r" reflect="-1"/>
+
+</robot>
