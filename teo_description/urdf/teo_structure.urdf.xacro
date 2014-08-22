@@ -43,8 +43,9 @@
 
 
  <!-- Definitions of parts of the robot body -->
- <xacro:include filename="$(find teo_description)/urdf/legs/leg.urdf.xacro" />
  <xacro:include filename="$(find teo_description)/urdf/torso/torso.urdf.xacro" />
+ <xacro:include filename="$(find teo_description)/urdf/legs/leg.urdf.xacro" />
+ <xacro:include filename="$(find teo_description)/urdf/arms/arm.urdf.xacro" />
 
 
 <!--****************

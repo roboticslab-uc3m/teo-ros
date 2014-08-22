@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+    RoboticsLab, University Carlos III of Madrid
+
+    Simple visualization of TEO's arms
+    Ideal for faster simulation or solve resources limitations
+
+    TODO: Review macros, properties and math to optimize the xacro file.
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="insert_visualization_shoulder_pitch" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.1 ${arm_link1} 0.1"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="${chest_link1} ${arm_link1/2*reflect} ${chest_link2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 ${arm_link1} 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="${chest_link1} ${arm_link1/2*reflect} ${chest_link2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_shoulder_yaw" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 ${arm_link2}"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link2/2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.08 0.08 ${arm_link2}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link2/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_elbow_pitch" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.06 0.06 ${arm_link3}"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link3/2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.06 0.06 ${arm_link3}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -${arm_link3/2}"/>
+    </collision>
+  </xacro:macro>
+</robot>

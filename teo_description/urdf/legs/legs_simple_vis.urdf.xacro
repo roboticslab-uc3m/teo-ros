@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--
+    RoboticsLab, University Carlos III of Madrid
+
+    Simple visualization of TEO's legs
+    Ideal for faster simulation or solve resources limitations
+
+    TODO: Review macros, properties and math to optimize the xacro file.
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="insert_visualization_hip_yaw" params="side reflect">
+    <visual>
+      <origin xyz="0 ${reflect*leg_link1} 0.045" rpy="0 1.571 0"/>
+      <geometry>
+        <cylinder radius="0.045" length="0.13"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 ${reflect*leg_link1} 0.045" rpy="0 1.571 0"/>
+      <geometry>
+        <cylinder radius="0.045" length="0.13"/>
+      </geometry>
+    </collision>
+    <!--visual>
+      <geometry>
+        <box size="0.1 ${leg_link1} 0.01"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 ${reflect*leg_link1/2} 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 ${leg_link1} 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 ${reflect*leg_link1/2} 0"/>
+    </collision-->
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_femur_link" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 ${leg_link2}"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${leg_link2/2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 ${leg_link2}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -${leg_link2/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_tibia_link" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 ${leg_link3}"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${leg_link3/2}"/>
+    </visual>
+    <visual>
+      <geometry>
+        <box size="0.05 ${leg_link4} 0.05"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 ${reflect*-leg_link4} -${leg_link3-0.05/2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.08 0.08 ${leg_link3}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -${leg_link3/2}"/>
+    </collision>
+    <collision>
+      <geometry>
+        <box size="0.05 ${leg_link4} 0.05"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 ${reflect*-leg_link4} -${leg_link3-0.05/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_ankle_pitch" params="side reflect">
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_astragalus_link" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 ${leg_link5}"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0 0 -${leg_link5/2}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.08 0.08 ${leg_link5}"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -${leg_link5/2}"/>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_sole" params="side reflect">
+    <visual>
+      <geometry>
+        <box size="0.2 0.1 0.01"/>
+      </geometry>
+      <material name="grey"/>
+      <origin rpy="0 0 0" xyz="0.05 0 ${-0.005-leg_link5}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 0.1 0.01"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.05 0 ${-0.005-leg_link5}"/>
+    </collision>
+  </xacro:macro>
+
+</robot>

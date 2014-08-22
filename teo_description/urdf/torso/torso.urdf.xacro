@@ -92,6 +92,7 @@
 				izz="1.000" />
     </inertial>
     <xacro:insert_visualization_waist_pitch/>
+    <xacro:insert_visualization_torso/>
   </link>
 
 

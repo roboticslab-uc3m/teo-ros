@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+    RoboticsLab, University Carlos III of Madrid
+
+    Simple visualization of TEO's torso
+    Ideal for faster simulation or solve resources limitations
+
+    TODO: Review macros, properties and math to optimize the xacro file.
+-->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <material name="LightGrey">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
+
+  <xacro:macro name="insert_visualization_waist_yaw" params="">
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+         <!--sphere radius="1.0"/-->
+         <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+         <!--sphere radius="1.0"/-->
+         <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_waist_pitch" params="">
+    <visual>
+      <origin xyz="0 0 0" rpy="${pi_2} 0 0"/>
+      <geometry>
+        <!--sphere radius="1.0"/-->
+        <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="${pi_2} 0 0"/>
+      <geometry>
+        <!--sphere radius="1.0"/-->
+        <cylinder radius="0.02" length="0.06"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+
+  <xacro:macro name="insert_visualization_torso" params="">
+    <visual>
+      <!-- one box -->
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.42 0.292"/>
+      </geometry>
+      <material name="LightGrey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.18 0.42 0.292"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+
+</robot>
