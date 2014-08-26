@@ -1,0 +1,17 @@
+XACRO
+=====
+
+- Convert xacro file into an urdf:     $ rosrun xacro xacro.py teo_humanoid_simple_vis.urdf.xacro > teo_humanoid.urdf
+- 
+
+URDF
+====
+
+- Check URDF:   $ check_urdf teo_humanoid.urdf
+- Visualize URDF:   $ urdf_to_graphiz teo_humanoid.urdf    &     $ evince teo.pdf
+- URDF -> SDF:   $ gzsdf print teo_humanoid.urdf > teo_humanoid.sdf
+
+GAZEBO
+======
+
+- Launch an empty world:   $ roslaunch teo_gazebo teo.launch

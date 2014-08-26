@@ -9,13 +9,12 @@
 <launch>
   <arg name="joint_publisher" default="1" /> <!-- For the moment joint_publisher is in default -->
   <arg name="gui" default="True" /> <!-- For the moment gui display for joint_publisher is in default -->
-  <arg name="simple_vis" default="0" /> <!-- For the moment simple_vis is in default -->
+  <arg name="simple_vis" default="1" /> <!-- For the moment simple_vis is in default -->
 
   <!-- Using xacro -->
 
   <!-- There is a problem with conditionals in xacro, for this reason the conditional is done here 20/08/2014 -->
   <!--param name="robot_description" command="$(find xacro)/xacro.py '$(find teo_description)/urdf/teo_humanoid.urdf.xacro' prefix:=$(arg simple_vis)" /-->
-
   <group if="$(arg simple_vis)">
     <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/urdf/teo_humanoid_simple_vis.urdf.xacro" /> 
   </group>

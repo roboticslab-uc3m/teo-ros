@@ -4,7 +4,11 @@ teo:
     type: joint_state_controller/JointStateController
     publish_rate: 50 
 
-  # Position Controllers ---------------------------------------
+  # ----------------------
+  # Position Controllers #
+  # ----------------------
+
+  # Waist
   waist_yaw_position_controller:
     type: effort_controllers/JointPositionController
     joint: waist_yaw
@@ -13,6 +17,8 @@ teo:
     type: effort_controllers/JointPositionController
     joint: waist_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  # Right Leg
   r_hip_yaw_position_controller:
     type: effort_controllers/JointPositionController
     joint: r_hip_yaw
@@ -37,6 +43,8 @@ teo:
     type: effort_controllers/JointPositionController
     joint: r_ankle_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  # Left leg
   l_hip_yaw_position_controller:
     type: effort_controllers/JointPositionController
     joint: l_hip_yaw
@@ -61,6 +69,8 @@ teo:
     type: effort_controllers/JointPositionController
     joint: l_ankle_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  # Right Arm
   r_shoulder_pitch_position_controller:
     type: effort_controllers/JointPositionController
     joint: r_shoulder_pitch
@@ -85,6 +95,8 @@ teo:
     type: effort_controllers/JointPositionController
     joint: r_wrist_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  # Left Arm
   l_shoulder_pitch_position_controller:
     type: effort_controllers/JointPositionController
     joint: l_shoulder_pitch

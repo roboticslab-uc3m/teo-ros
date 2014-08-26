@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Controller configuration -->
+  <rosparam command="load" file="$(find teo_control)/config/joint_trajectory_controllers.yaml" />
+
+  <!-- Spawn whole-body joint trajectory controllers -->
+  <node name="joint_trajectory_controllers_spawner"
+  pkg="controller_manager" type="spawner" output="screen"
+  args="right_leg_controller
+  left_leg_controller
+  torso_controller
+  right_arm_controller
+  left_arm_controller" />
+
+</launch>

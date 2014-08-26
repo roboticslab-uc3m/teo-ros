@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+
 <launch>
 
 <!-- Load joint controller configurations from YAML file to parameter server -->
@@ -19,8 +21,8 @@ output="screen" ns="/teo" args="
 	l_hip_pitch_position_controller
 	l_knee_pitch_position_controller
 	l_ankle_pitch_position_controller
-	l_ankle_roll_position_controller"/>
-<!--	r_shoulder_pitch_position_controller
+	l_ankle_roll_position_controller
+	r_shoulder_pitch_position_controller
 	r_shoulder_roll_position_controller
 	r_shoulder_yaw_position_controller
 	r_elbow_pitch_position_controller
@@ -32,12 +34,12 @@ output="screen" ns="/teo" args="
 	l_elbow_pitch_position_controller
 	l_wrist_yaw_position_controller
 	l_wrist_pitch_position_controller
-	joint_state_controller"/-->
+	joint_state_controller"/>
 
 <!-- convert joint states to TF transforms for rviz, etc -->
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-respawn="false" output="screen">
-<remap from="/joint_states" to="/teo/joint_states" />
+  respawn="false" output="screen">
+  <remap from="/joint_states" to="/teo/joint_states" />
 </node>
 
 </launch>

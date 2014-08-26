@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Arguments for this launch file --> <!--Example: paused:=true -->
+	<arg name="paused" default="true"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="gui" default="true"/>
+	<arg name="headless" default="false"/>
+	<arg name="debug" default="false"/>
+
+	<arg name="robot_initial_pose/x" default="0.0"/>
+	<arg name="robot_initial_pose/y" default="0.0"/>
+	<arg name="robot_initial_pose/z" default="0.760"/>
+
+  <arg name="simple_vis" default="1" /> <!-- For the moment simple_vis is in default -->
+
+  <!-- Using empty_world.launch, changing only the name of the world to be launched -->
+	  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<!--arg name="world_name" value="$(find teo_gazebo)/worlds/gas_station.world"/-->
+
+		<!-- Use launch arguments for the gazebo world -->
+		<arg name="world_name" value="$(find teo_gazebo)/worlds/teo.world"/>
+		<arg name="debug" value="$(arg debug)" />
+		<arg name="gui" value="$(arg gui)" />
+		<arg name="paused" value="$(arg paused)"/>
+		<arg name="use_sim_time" value="$(arg use_sim_time)"/>
+		<arg name="headless" value="$(arg headless)"/>
+
+	</include>
+
+  <!-- Robot Description -->
+  <!-- There is a problem with conditionals in xacro, for this reason the conditional is done here 20/08/2014 -->
+  <!--param name="robot_description" command="$(find xacro)/xacro.py '$(find teo_description)/urdf/teo_humanoid.urdf.xacro' prefix:=$(arg simple_vis)" /-->
+  <group if="$(arg simple_vis)">
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/urdf/teo_humanoid_simple_vis.urdf.xacro" /> 
+  </group>
+  <group unless="$(arg simple_vis)">
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/urdf/teo_humanoid.urdf.xacro" /> 
+  </group>
+
+	<!--param name="robot_description" command="$(find xacro)/xacro.py '$(find pr2_description)/robots/pr2.urdf.xacro'" /-->
+	<param name="robot_initial_pose/x"     value="$(arg robot_initial_pose/x)"      type="double"/>
+	<param name="robot_initial_pose/y"     value="$(arg robot_initial_pose/y)"      type="double"/>
+	<param name="robot_initial_pose/z"     value="$(arg robot_initial_pose/z)"  type="double"/>
+	<param name="robot_initial_pose/roll"  value="0"      type="double"/>
+	<param name="robot_initial_pose/pitch" value="0"      type="double"/>
+	<param name="robot_initial_pose/yaw"   value="0"      type="double"/>
+
+  <!-- Spawn TEO -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description
+	 -urdf
+	 -x $(arg robot_initial_pose/x)
+	 -y $(arg robot_initial_pose/y)
+	 -z $(arg robot_initial_pose/z)
+	 -model teo" />
+
+
+</launch>

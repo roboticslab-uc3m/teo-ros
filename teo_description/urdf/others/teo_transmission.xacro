@@ -11,9 +11,10 @@
 	<xacro:macro name="limb_joint_simple_transmission" params="name side axis reduction" >
 		<transmission name="${side}_${name}_${axis}_trans"> 
 			<type>transmission_interface/SimpleTransmission</type> 
-			<joint name="${side}_${name}_${axis}"/>
-			<actuator name="${side}_${name}_${axis}_motor" > 
+			<joint name="${side}_${name}_${axis}">
 				<hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>
+			<actuator name="${side}_${name}_${axis}_motor" > 
 				<mechanicalReduction>${reduction}</mechanicalReduction> 
 			</actuator> 
 		</transmission> 
@@ -22,9 +23,10 @@
 	<xacro:macro name="waist_joint_simple_transmission" params="axis reduction" >
 		<transmission name="waist_${axis}_trans"> 
 			<type>transmission_interface/SimpleTransmission</type> 
-			<joint name="waist_${axis}" />
-			<actuator name="waist_${axis}_motor" > 
+			<joint name="waist_${axis}">
 				<hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>
+			<actuator name="waist_${axis}_motor" > 
 				<mechanicalReduction>${reduction}</mechanicalReduction> 
 			</actuator> 
 		</transmission> 
