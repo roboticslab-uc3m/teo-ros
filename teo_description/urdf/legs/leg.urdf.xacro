@@ -92,63 +92,63 @@
         <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
         <mass value="0.001"/>
         <inertia
-				  ixx="1.000" ixy="0.000" ixz="0.000"
-					iyy="1.000" iyz="0.000"
-					izz="1.000" />
+				  ixx="0.001" ixy="0.000" ixz="0.000"
+					iyy="0.001" iyz="0.000"
+					izz="0.001" />
       </inertial>
     </link>
     <link name="${side}_hip_roll_link">
       <inertial>
-        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <origin xyz="-0.029398 ${reflect*0.001062} -0.017753" rpy="0 0 0"/>
         <mass value="0.001"/>
         <inertia
-				  ixx="1.000" ixy="0.000" ixz="0.000"
-				  iyy="1.000" iyz="0.000"
-					izz="1.000" />
+				  ixx="0.000001" ixy="0.00000" ixz="0.00000"
+				  iyy="0.000002" iyz="0.00000"
+					izz="0.000001" />
       </inertial>
 			<xacro:insert_visualization_hip_roll side="${side}" reflect="{reflect}"/>
     </link>
     <link name="${side}_femur_link">
       <inertial>
-        <origin xyz="0.033 ${reflect*leg_link4+0.001} ${leg_link3+leg_link2-0.443}" rpy="0 0 0"/>
+        <origin xyz="${0.013-0.008362} ${reflect*0.000115} ${-leg_link2+0.167156}" rpy="0 0 0"/>
         <mass value="1.844"/>
         <inertia
-				  ixx="0.020" ixy="6.052e-5" ixz="7.948e-4"
-					iyy="0.025" iyz="6.454e-4"
-					izz="0.013" />
+				  ixx="0.000020" ixy="0.000000" ixz="0.000000"
+					iyy="0.000018" iyz="0.000002"
+					izz="0.000005" />
       </inertial>
       <xacro:insert_visualization_femur_link side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_tibia_link">
       <inertial>
-        <origin xyz="-0.027 ${reflect*leg_link4-0.005} ${leg_link3-0.16368}" rpy="0 0 0"/>
+        <origin xyz="${-0.013-0.001019} ${reflect*(-(leg_link4)+0.024670)} ${-leg_link3+0.127850}" rpy="0 0 0"/>
         <mass value="2.0817"/>
         <inertia
-				  ixx="0.020" ixy="6.052e-5" ixz="-7.498e-4"
-				  iyy="0.025" iyz="6.454e-4"
-					izz="0.013" />
+          ixx="0.000011" ixy="0.000000" ixz="0.000000"
+          iyy="0.000010" iyz="0.000000"
+          izz="0.000003" />
       </inertial>
       <xacro:insert_visualization_tibia_link side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_ankle_pitch_link">
       <inertial>
-        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
+        <origin xyz="0.004952 ${reflect*-0.005263} 0.028198" rpy="0 0 0"/>
         <mass value="1.0"/>
         <inertia
-				  ixx="1.000" ixy="0.000" ixz="0.000"
-					iyy="1.000" iyz="0.000"
-					izz="1.000" />
+				  ixx="0.000001" ixy="0.000000" ixz="0.000000"
+					iyy="0.000001" iyz="0.000000"
+					izz="0.000001" />
       </inertial>
       <xacro:insert_visualization_ankle_pitch side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_astragalus_link">
       <inertial>
-        <origin xyz="3.026e-3 ${reflect*3.5e-3} -9.323e-3" rpy="0 0 0"/>
+        <origin xyz="0.018179 ${reflect*0.003551} -0.075080" rpy="0 0 0"/>
         <mass value="3.8994"/>
         <inertia
-				  ixx="0.062" ixy="-1.417e-4" ixz="-0.004"
-					iyy="0.059" iyz="0.002"
-					izz="0.011" />
+          ixx="0.000003" ixy="0.000000" ixz="0.000001"
+          iyy="0.000006" iyz="0.000000"
+          izz="0.000006" />
       </inertial>
       <xacro:insert_visualization_astragalus_link side="${side}" reflect="${reflect}"/>
       <xacro:insert_visualization_sole side="${side}" reflect="${reflect}"/> <!-- OJO, falta bajarlo -link5/2-->
@@ -158,9 +158,9 @@
         <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
         <mass value="0.001"/>
         <inertia
-				  ixx="1.000" ixy="0.000" ixz="0.000"
-					iyy="1.000" iyz="0.000"
-					izz="1.000" />
+				  ixx="0.001" ixy="0.000" ixz="0.000"
+					iyy="0.001" iyz="0.000"
+					izz="0.001" />
       </inertial>
     </link>
 

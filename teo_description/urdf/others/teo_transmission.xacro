@@ -9,7 +9,7 @@
 
 <robot name="teo" xmlns:xacro="http://ros.org/wiki/xacro">
 	<xacro:macro name="limb_joint_simple_transmission" params="name side axis reduction" >
-		<transmission name="${side}_${name}_${axis}_trans"> 
+		<transmission name="${side}_${name}_${axis}_trans">
 			<type>transmission_interface/SimpleTransmission</type> 
 			<joint name="${side}_${name}_${axis}">
 				<hardwareInterface>EffortJointInterface</hardwareInterface>

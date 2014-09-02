@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<package>
+  <name>teo_tf</name>
+  <version>0.0.1</version>
+
+  <description> teo_tf package
+    This package contains the files that generates some teo transformations of its operational points.
+
+    RoboticsLab, University Carlos III of Madrid
+  </description>
+
+  <maintainer email="mingo.esteban@gmail.com">Domingo Esteban</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/teo_tf</url>
+  <url type="website">http://roboticslab.uc3m.es</url>
+
+  <author email="mingo.esteban@gmail.com">Domingo Esteban</author>
+
+
+  <!-- The *_depend tags are used to specify dependencies -->
+  <!-- Dependencies can be catkin packages or system dependencies -->
+  <!-- Examples: -->
+  <!-- Use build_depend for packages you need at compile time: -->
+  <!--   <build_depend>message_generation</build_depend> -->
+  <!-- Use buildtool_depend for build tool packages: -->
+  <!--   <buildtool_depend>catkin</buildtool_depend> -->
+  <!-- Use run_depend for packages you need at runtime: -->
+  <!--   <run_depend>message_runtime</run_depend> -->
+  <!-- Use test_depend for packages you need only for testing: -->
+  <!--   <test_depend>gtest</test_depend> -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <run_depend>roscpp</run_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- You can specify that this package is a metapackage here: -->
+    <!-- <metapackage/> -->
+
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

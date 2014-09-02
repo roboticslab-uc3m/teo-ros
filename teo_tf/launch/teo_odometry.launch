@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- 
+  This file launches one node:
+    - teo_odometry that publishes the odom->base_link transformation
+-->
+<launch>
+	<node name= "teo_odometry" pkg="teo_tf" type="teo_odometry" output="screen"/>
+</launch>
