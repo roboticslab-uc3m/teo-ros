@@ -7,8 +7,8 @@
 -->
 
 <launch>
-  <arg name="joint_publisher" default="1" /> <!-- For the moment joint_publisher is in default -->
-  <arg name="gui" default="True" /> <!-- For the moment gui display for joint_publisher is in default -->
+  <arg name="joint_publisher" default="0" /> <!-- For the moment joint_publisher is in default -->
+  <arg name="gui" default="False" /> <!-- For the moment gui display for joint_publisher is in default -->
   <arg name="simple_vis" default="0" /> <!-- For the moment simple_vis is in default -->
 
   <!-- Using xacro -->
