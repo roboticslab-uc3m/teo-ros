@@ -18,9 +18,13 @@
 
 <!-- Link lengths -->
 	<xacro:property name="waist_link1" value="0.0" />
-	<xacro:property name="waist_link2" value="0.287" />
+	<!--xacro:property name="waist_link2" value="0.287" /-->
+	<xacro:property name="waist_link2" value="0.19070" />
 	<xacro:property name="torso_link1" value="0.0" />
+	<!--xacro:property name="torso_link2" value="0.06" /-->
 	<xacro:property name="torso_link2" value="0.06" />
+  <xacro:property name="chest_link1" value="0.0" />
+  <xacro:property name="chest_link2" value="0.245" />
 
 
 <!-- Minimum angles -->
@@ -66,8 +70,6 @@
 				izz="0.008" />
     </inertial>
     <xacro:insert_visualization_waist/>
-    <xacro:insert_visualization_hip_yaw side="r" reflect="-1"/>
-    <xacro:insert_visualization_hip_yaw side="l" reflect="1"/>
   </link>
 
   <link name="waist_yaw_link" >

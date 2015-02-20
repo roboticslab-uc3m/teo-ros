@@ -27,6 +27,7 @@
   </xacro:unless-->
 
   <!--xacro:include filename="$(find teo_description)/urdf/visual.xacro" /-->
+  <xacro:include filename="$(find teo_description)/urdf/others/teo_colors.xacro" />
   <xacro:include filename="$(find teo_description)/urdf/torso/torso_vis.urdf.xacro" />
   <xacro:include filename="$(find teo_description)/urdf/legs/legs_vis.urdf.xacro" />
   <xacro:include filename="$(find teo_description)/urdf/arms/arms_vis.urdf.xacro" />

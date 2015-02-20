@@ -18,6 +18,7 @@
 <!-- *** TEO LEG PARAMETERS -->
 
 <!-- Link lengths -->
+	<xacro:property name="leg_link0" value="0.10237" /> <!-- Hip -->
 	<xacro:property name="leg_link1" value="0.146" /> <!-- Hip -->
 	<xacro:property name="leg_link2" value="0.33" /> <!-- Femur -->
 	<xacro:property name="leg_link3" value="0.3" /> <!-- Tibia -->
@@ -96,6 +97,7 @@
 					iyy="0.001" iyz="0.000"
 					izz="0.001" />
       </inertial>
+			<xacro:insert_visualization_hip_yaw side="${side}" reflect="{reflect}"/>
     </link>
     <link name="${side}_hip_roll_link">
       <inertial>
@@ -106,7 +108,7 @@
 				  iyy="0.000002" iyz="0.00000"
 					izz="0.000001" />
       </inertial>
-			<xacro:insert_visualization_hip_roll side="${side}" reflect="{reflect}"/>
+			<xacro:insert_visualization_hip_pitch side="${side}" reflect="{reflect}"/>
     </link>
     <link name="${side}_femur_link">
       <inertial>
@@ -150,8 +152,7 @@
           iyy="0.000006" iyz="0.000000"
           izz="0.000006" />
       </inertial>
-      <xacro:insert_visualization_astragalus_link side="${side}" reflect="${reflect}"/>
-      <xacro:insert_visualization_sole side="${side}" reflect="${reflect}"/> <!-- OJO, falta bajarlo -link5/2-->
+      <xacro:insert_visualization_ankle_roll side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_sole">
       <inertial>
@@ -162,6 +163,8 @@
 					iyy="0.001" iyz="0.000"
 					izz="0.001" />
       </inertial>
+      <xacro:insert_visualization_foot side="${side}" reflect="${reflect}"/>
+      <xacro:insert_visualization_union_sensorFT_foot side="${side}" reflect="${reflect}"/>
     </link>
 
   </xacro:macro>
@@ -172,7 +175,7 @@
     <joint name="${side}_hip_yaw" type="revolute">
       <parent link="waist"/>
       <child link="${side}_hip_yaw_link"/>
-      <origin xyz="0 ${reflect*leg_link1} 0" rpy="0 0 0"/> <!--y=Leg_link1-->
+      <origin xyz="0 ${reflect*leg_link1} ${-leg_link0}" rpy="0 0 0"/> <!--y=Leg_link1-->
       <axis xyz="0 0 1"/>
       <limit velocity="${hip_yaw_velocity}" effort="${hip_yaw_effort}" lower="${hip_yaw_lower}" upper="${hip_yaw_upper}"/>
 			<dynamics damping="${hip_yaw_damping}" friction="${hip_yaw_friction}"/>

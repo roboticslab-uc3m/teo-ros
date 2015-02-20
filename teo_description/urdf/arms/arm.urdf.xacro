@@ -18,11 +18,11 @@
 <!-- *** TEO ARM PARAMETERS -->
 
 <!-- Link lengths (meters)-->
-	<xacro:property name="chest_link1" value="0.0" />
-	<xacro:property name="chest_link2" value="0.245" />
+	<!--xacro:property name="chest_link1" value="0.0" />
+	<xacro:property name="chest_link2" value="0.245" /-->
 	<xacro:property name="arm_link1" value="0.340" /> <!-- Clavicle -->
-	<xacro:property name="arm_link2" value="0.337" /> <!-- Humerus -->
-	<xacro:property name="arm_link3" value="0.210" /> <!-- Ulna -->
+	<xacro:property name="arm_link2" value="0.32901" /> <!-- Humerus -->
+	<xacro:property name="arm_link3" value="0.202" /> <!-- Ulna -->
 
 <!-- Minimum angles (degrees) -->
 	<xacro:property name="shoulder_pitch_lower" value="${-180 * deg_to_rad}" />
@@ -95,6 +95,7 @@
 					iyy="1.000" iyz="0.000"
 					izz="1.000" />
       </inertial>
+      <xacro:insert_visualization_shoulder_pitch side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_shoulder_roll_link">
       <inertial>
@@ -105,6 +106,7 @@
 					iyy="1.000" iyz="0.000"
 					izz="1.000" />
       </inertial>
+      <xacro:insert_visualization_shoulder_roll side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_shoulder_yaw_link">
       <inertial>
@@ -137,6 +139,7 @@
 					iyy="1.000" iyz="0.000"
 					izz="1.000" />
       </inertial>
+      <xacro:insert_visualization_wrist_yaw side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_wrist_pitch_link">
       <inertial>
@@ -147,6 +150,7 @@
 					iyy="3.125e-4" iyz="0.000"
 					izz="1.525e-4" />
       </inertial>
+      <xacro:insert_visualization_wrist_pitch side="${side}" reflect="${reflect}"/>
     </link>
 
   </xacro:macro>
@@ -157,7 +161,7 @@
     <joint name="${side}_shoulder_pitch" type="revolute">
       <parent link="waist_pitch_link"/>
       <child link="${side}_shoulder_pitch_link"/>
-      <origin xyz="-${chest_link1} ${reflect*arm_link1} ${chest_link2}" rpy="0 0 0"/>
+      <origin xyz="-${chest_link1} ${reflect*arm_link1} ${chest_link2+torso_link2}" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit velocity="${shoulder_pitch_velocity}" effort="${shoulder_pitch_effort}" lower="${shoulder_pitch_lower}" upper="${shoulder_pitch_upper}"/>
     </joint> 
