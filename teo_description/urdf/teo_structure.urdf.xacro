@@ -58,5 +58,7 @@
   <xacro:gazebo_torso/>
   <xacro:gazebo_legs_links side="l" reflect="1"/>
   <xacro:gazebo_legs_links side="r" reflect="-1"/>
+  <xacro:gazebo_arms_links side="l" reflect="1"/>
+  <xacro:gazebo_arms_links side="r" reflect="-1"/>
 
 </robot>

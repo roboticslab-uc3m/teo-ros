@@ -10,16 +10,19 @@
 
 	<arg name="robot_initial_pose/x" default="0.0"/>
 	<arg name="robot_initial_pose/y" default="0.0"/>
-	<arg name="robot_initial_pose/z" default="0.760"/>
+	<arg name="robot_initial_pose/z" default="0.856"/>
+  <arg name="robot_initial_pose/yaw" default="0.0"/>
 
-  <arg name="simple_vis" default="1" /> <!-- For the moment simple_vis is in default -->
+  <arg name="simple_vis" default="0" /> <!-- For the moment simple_vis is in default -->
 
   <!-- Using empty_world.launch, changing only the name of the world to be launched -->
 	  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<!--arg name="world_name" value="$(find teo_gazebo)/worlds/gas_station.world"/-->
-
+		
 		<!-- Use launch arguments for the gazebo world -->
 		<arg name="world_name" value="$(find teo_gazebo)/worlds/teo.world"/>
+    <!--arg name="world_name" value="$(find teo_gazebo)/worlds/gas_station.world"/-->
+    <!--arg name="world_name" value="$(find teo_gazebo)/worlds/kitchen_dining.world"/-->
+    <!--arg name="world_name" value="$(find teo_gazebo)/worlds/drc_practice_block_wall.world"/-->
 		<arg name="debug" value="$(arg debug)" />
 		<arg name="gui" value="$(arg gui)" />
 		<arg name="paused" value="$(arg paused)"/>
@@ -39,12 +42,12 @@
   </group>
 
 	<!--param name="robot_description" command="$(find xacro)/xacro.py '$(find pr2_description)/robots/pr2.urdf.xacro'" /-->
-	<param name="robot_initial_pose/x"     value="$(arg robot_initial_pose/x)"      type="double"/>
-	<param name="robot_initial_pose/y"     value="$(arg robot_initial_pose/y)"      type="double"/>
-	<param name="robot_initial_pose/z"     value="$(arg robot_initial_pose/z)"  type="double"/>
-	<param name="robot_initial_pose/roll"  value="0"      type="double"/>
-	<param name="robot_initial_pose/pitch" value="0"      type="double"/>
-	<param name="robot_initial_pose/yaw"   value="0"      type="double"/>
+	<param name="robot_initial_pose/x"     value="$(arg robot_initial_pose/x)"     type="double"/>
+	<param name="robot_initial_pose/y"     value="$(arg robot_initial_pose/y)"     type="double"/>
+	<param name="robot_initial_pose/z"     value="$(arg robot_initial_pose/z)"     type="double"/>
+	<param name="robot_initial_pose/roll"  value="0"                               type="double"/>
+	<param name="robot_initial_pose/pitch" value="0"                               type="double"/>
+	<param name="robot_initial_pose/yaw"   value="$(arg robot_initial_pose/yaw)"   type="double"/>
 
   <!-- Spawn TEO -->
 	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description

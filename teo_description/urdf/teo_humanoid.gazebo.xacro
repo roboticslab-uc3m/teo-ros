@@ -8,30 +8,121 @@
 	</gazebo>
 
 
+	<!-- ############### -->
+	<!-- # TORSO LINKS # -->
+	<!-- ############### -->
 
   <xacro:macro name="gazebo_torso" params="">
-		<gazebo reference="torso">
+		<gazebo reference="waist_yaw_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/Black</material>
+			<material>Gazebo/FlatBlack</material>
 		</gazebo>
+
+		<gazebo reference="waist_pitch_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Green</material>
+		</gazebo>
+
+		<!--gazebo reference="waist">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Red</material>
+		</gazebo-->
+
 	</xacro:macro>
 
+	<!-- ############## -->
+	<!-- # LEGS LINKS # -->
+	<!-- ############## -->
+
   <xacro:macro name="gazebo_legs_links" params="side reflect">
+		<gazebo reference="${side}_hip_roll_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Purple</material>
+		</gazebo>
+
+		<gazebo reference="${side}_hip_yaw_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/SkyBlue</material>
+		</gazebo>
+
 		<gazebo reference="${side}_femur_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
 			<material>Gazebo/Orange</material>
 		</gazebo>
 
-		<!--gazebo reference="${side}_femur_link">
+		<gazebo reference="${side}_tibia_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
 			<material>Gazebo/Black</material>
-		</gazebo-->
+		</gazebo>
 
+		<gazebo reference="${side}_ankle_pitch_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Green</material>
+		</gazebo>
+
+		<gazebo reference="${side}_astragalus_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Yellow</material>
+		</gazebo>
+
+		<gazebo reference="${side}_sole">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Grey</material>
+		</gazebo>
   </xacro:macro>  
 
+	<!-- ############## -->
+	<!-- # ARMS LINKS # -->
+	<!-- ############## -->
+	<xacro:macro name="gazebo_arms_links" params="side reflect">
+		<gazebo reference="${side}_shoulder_pitch_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Turquoise</material>
+		</gazebo>
+
+		<gazebo reference="${side}_shoulder_roll_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/ZincYellow</material>
+		</gazebo>
+
+		<gazebo reference="${side}_shoulder_yaw_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Blue</material>
+		</gazebo>
+
+		<gazebo reference="${side}_elbow_pitch_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/RedBright</material>
+		</gazebo>
+
+		<gazebo reference="${side}_wrist_yaw_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/SkyBlue</material>
+		</gazebo>
+
+		<gazebo reference="${side}_wrist_pitch_link">
+			<mu1>0.9</mu1>
+			<mu2>0.9</mu2>
+			<material>Gazebo/Green</material>
+		</gazebo>
+	</xacro:macro>
+
+	<!-- Sensors -->
  
 
 
