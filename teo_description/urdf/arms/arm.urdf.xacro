@@ -157,7 +157,7 @@
 
 
   <!-- Joints -->
-  <xacro:macro name="arms_joints" params="side reflect">
+  <xacro:macro name="arms_joints" params="side reflect effortTransmission velocityTransmission positionTransmission">
     <joint name="${side}_shoulder_pitch" type="revolute">
       <parent link="waist_pitch_link"/>
       <child link="${side}_shoulder_pitch_link"/>
@@ -201,18 +201,18 @@
       <limit velocity="${wrist_pitch_velocity}" effort="${wrist_pitch_effort}" lower="${wrist_pitch_lower}" upper="${wrist_pitch_upper}"/>
     </joint>  
 
-    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="pitch" reduction="${shoulder_pitch_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="roll" reduction="${shoulder_roll_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="yaw" reduction="${shoulder_yaw_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="elbow" side="${side}" axis="pitch" reduction="${elbow_pitch_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="wrist" side="${side}" axis="yaw" reduction="${wrist_yaw_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="wrist" side="${side}" axis="pitch" reduction="${wrist_pitch_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="pitch" reduction="${shoulder_pitch_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="roll" reduction="${shoulder_roll_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="shoulder" side="${side}" axis="yaw" reduction="${shoulder_yaw_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="elbow" side="${side}" axis="pitch" reduction="${elbow_pitch_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="wrist" side="${side}" axis="yaw" reduction="${wrist_yaw_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="wrist" side="${side}" axis="pitch" reduction="${wrist_pitch_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
 
   </xacro:macro>
 
   <xacro:arms_links side="l" reflect="1"/>
   <xacro:arms_links side="r" reflect="-1"/>  
-  <xacro:arms_joints side="l" reflect="1"/>
-  <xacro:arms_joints side="r" reflect="-1"/> 
+  <xacro:arms_joints side="l" reflect="1" effortTransmission="1" velocityTransmission="0" positionTransmission="0"/>
+  <xacro:arms_joints side="r" reflect="-1" effortTransmission="1" velocityTransmission="0" positionTransmission="0"/> 
 
 </robot>

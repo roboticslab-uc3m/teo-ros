@@ -92,10 +92,7 @@
       <inertial>
         <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
         <mass value="0.001"/>
-        <inertia
-				  ixx="0.001" ixy="0.000" ixz="0.000"
-					iyy="0.001" iyz="0.000"
-					izz="0.001" />
+        <inertia ixx="0.00132187534" ixy="0.00000001514" ixz="0.00040022268" iyy="0.0018528617" iyz="0.00000050713" izz="0.00084231334"/>
       </inertial>
 			<xacro:insert_visualization_hip_yaw side="${side}" reflect="{reflect}"/>
     </link>
@@ -103,10 +100,7 @@
       <inertial>
         <origin xyz="-0.029398 ${reflect*0.001062} -0.017753" rpy="0 0 0"/>
         <mass value="0.001"/>
-        <inertia
-				  ixx="0.000001" ixy="0.00000" ixz="0.00000"
-				  iyy="0.000002" iyz="0.00000"
-					izz="0.000001" />
+        <inertia ixx="0.0008416476" ixy="-0.00000268743" ixz="0.00000667199" iyy="0.00039794844" iyz="0.00002668971" izz="0.00084196694"/>
       </inertial>
 			<xacro:insert_visualization_hip_pitch side="${side}" reflect="{reflect}"/>
     </link>
@@ -114,10 +108,7 @@
       <inertial>
         <origin xyz="${0.013-0.008362} ${reflect*0.000115} ${-leg_link2+0.167156}" rpy="0 0 0"/>
         <mass value="1.844"/>
-        <inertia
-				  ixx="0.000020" ixy="0.000000" ixz="0.000000"
-					iyy="0.000018" iyz="0.000002"
-					izz="0.000005" />
+        <inertia ixx="0.00507885174" ixy="-0.00034076421" ixz="-0.00225952731" iyy="0.02850097402" iyz="0.00003047874" izz="0.02632392239"/>
       </inertial>
       <xacro:insert_visualization_femur_link side="${side}" reflect="${reflect}"/>
     </link>
@@ -125,10 +116,7 @@
       <inertial>
         <origin xyz="${-0.013-0.001019} ${reflect*(-(leg_link4)+0.024670)} ${-leg_link3+0.127850}" rpy="0 0 0"/>
         <mass value="2.0817"/>
-        <inertia
-          ixx="0.000011" ixy="0.000000" ixz="0.000000"
-          iyy="0.000010" iyz="0.000000"
-          izz="0.000003" />
+        <inertia ixx="0.00361006492" ixy="0.00012218208" ixz="0.00160208242" iyy="0.02470649045" iyz="0.00008129755" izz="0.02272322206"/>
       </inertial>
       <xacro:insert_visualization_tibia_link side="${side}" reflect="${reflect}"/>
     </link>
@@ -136,10 +124,7 @@
       <inertial>
         <origin xyz="0.004952 ${reflect*-0.005263} 0.028198" rpy="0 0 0"/>
         <mass value="1.0"/>
-        <inertia
-				  ixx="0.000001" ixy="0.000000" ixz="0.000000"
-					iyy="0.000001" iyz="0.000000"
-					izz="0.000001" />
+        <inertia ixx="0.00082035023" ixy="0.00000048534" ixz="0.00000226301" iyy="0.00082074105" iyz="-0.00002892247" izz="0.00037614067"/>
       </inertial>
       <xacro:insert_visualization_ankle_pitch side="${side}" reflect="${reflect}"/>
     </link>
@@ -147,10 +132,7 @@
       <inertial>
         <origin xyz="0.018179 ${reflect*0.003551} -0.075080" rpy="0 0 0"/>
         <mass value="3.8994"/>
-        <inertia
-          ixx="0.000003" ixy="0.000000" ixz="0.000001"
-          iyy="0.000006" iyz="0.000000"
-          izz="0.000006" />
+        <inertia ixx="0.00366502559" ixy="0.00020479295" ixz="0.00112439297" iyy="0.00532618026" iyz="0.00012133755" izz="0.00353091463"/>
       </inertial>
       <xacro:insert_visualization_ankle_roll side="${side}" reflect="${reflect}"/>
     </link>
@@ -158,10 +140,7 @@
       <inertial>
         <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
         <mass value="0.001"/>
-        <inertia
-				  ixx="0.001" ixy="0.000" ixz="0.000"
-					iyy="0.001" iyz="0.000"
-					izz="0.001" />
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
       </inertial>
       <xacro:insert_visualization_foot side="${side}" reflect="${reflect}"/>
       <xacro:insert_visualization_union_sensorFT_foot side="${side}" reflect="${reflect}"/>
@@ -171,7 +150,7 @@
 
 
   <!-- Joints -->
-  <xacro:macro name="legs_joints" params="side reflect">
+  <xacro:macro name="legs_joints" params="side reflect effortTransmission velocityTransmission positionTransmission">
     <joint name="${side}_hip_yaw" type="revolute">
       <parent link="waist"/>
       <child link="${side}_hip_yaw_link"/>
@@ -232,18 +211,18 @@
       <origin xyz="0 0 -${leg_link5}" rpy="0 0 0"/>
     </joint> 
 
-    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="yaw" reduction="${hip_yaw_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="roll" reduction="${hip_roll_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="pitch" reduction="${hip_pitch_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="knee" side="${side}" axis="pitch" reduction="${knee_pitch_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="ankle" side="${side}" axis="pitch" reduction="${ankle_pitch_reduction}"/>
-    <xacro:limb_joint_simple_transmission name="ankle" side="${side}" axis="roll" reduction="${ankle_roll_reduction}"/>
+    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="yaw" reduction="${hip_yaw_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="roll" reduction="${hip_roll_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="hip" side="${side}" axis="pitch" reduction="${hip_pitch_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="knee" side="${side}" axis="pitch" reduction="${knee_pitch_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="ankle" side="${side}" axis="pitch" reduction="${ankle_pitch_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
+    <xacro:limb_joint_simple_transmission name="ankle" side="${side}" axis="roll" reduction="${ankle_roll_reduction}" effortTransmission="${effortTransmission}" velocityTransmission="${velocityTransmission}" positionTransmission="${positionTransmission}"/>
 
   </xacro:macro>
 
   <xacro:legs_links side="l" reflect="1"/>
   <xacro:legs_links side="r" reflect="-1"/>  
-  <xacro:legs_joints side="l" reflect="1"/>
-  <xacro:legs_joints side="r" reflect="-1"/> 
+  <xacro:legs_joints side="l" reflect="1" effortTransmission="0" velocityTransmission="0" positionTransmission="1"/>
+  <xacro:legs_joints side="r" reflect="-1" effortTransmission="0" velocityTransmission="0" positionTransmission="1"/> 
 
 </robot>

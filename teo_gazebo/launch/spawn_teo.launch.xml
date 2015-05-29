@@ -1,0 +1,39 @@
+<!--
+  Spawns TEO inside a Gazebo simulation
+  -->
+<launch>
+  <arg name="robot_name" default="teo"/>
+
+  <arg name="robot_initial_pose/x" default="0.0"/>
+  <arg name="robot_initial_pose/y" default="0.0"/>
+  <arg name="robot_initial_pose/z" default="0.856"/>
+  <arg name="robot_initial_pose/roll" default="0.0"/>
+  <arg name="robot_initial_pose/pitch" default="0.0"/>
+  <arg name="robot_initial_pose/yaw" default="0.0"/>
+
+  <arg name="simple_vis" default="0" />
+
+
+  <!-- Robot Description -->
+  <!-- There is a problem with conditionals in xacro, for this reason the conditional is done here 20/08/2014 -->
+  <!--param name="robot_description" command="$(find xacro)/xacro.py '$(find teo_description)/urdf/teo_humanoid.urdf.xacro' prefix:=$(arg simple_vis)" /-->
+  <group if="$(arg simple_vis)">
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/urdf/teo_humanoid_simple_vis.urdf.xacro" /> 
+  </group>
+  <group unless="$(arg simple_vis)">
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/urdf/teo_humanoid.urdf.xacro" /> 
+  </group>
+
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_$(arg robot_name)" args="-param robot_description 
+    -urdf
+    -x $(arg robot_initial_pose/x)
+    -y $(arg robot_initial_pose/y)
+    -z $(arg robot_initial_pose/z)
+    -R $(arg robot_initial_pose/roll)
+    -P $(arg robot_initial_pose/pitch)
+    -Y $(arg robot_initial_pose/yaw)
+    -model $(arg robot_name)" respawn="false">
+  </node>
+
+</launch>
