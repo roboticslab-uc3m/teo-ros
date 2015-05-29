@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!-- Load joint controller configurations from YAML file to parameter server -->
+<rosparam file="$(find teo_control)/config/velocity_controllers.yaml" command="load"/>
+
+<!-- load the controllers -->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/teo" args="
+	waist_yaw_position_controller
+	waist_pitch_position_controller
+	r_hip_yaw_position_controller
+	r_hip_roll_position_controller
+	r_hip_pitch_position_controller
+	r_knee_pitch_position_controller
+	r_ankle_pitch_position_controller
+	r_ankle_roll_position_controller
+	l_hip_yaw_position_controller
+	l_hip_roll_position_controller
+	l_hip_pitch_position_controller
+	l_knee_pitch_position_controller
+	l_ankle_pitch_position_controller
+	l_ankle_roll_position_controller
+	r_shoulder_pitch_position_controller
+	r_shoulder_roll_position_controller
+	r_shoulder_yaw_position_controller
+	r_elbow_pitch_position_controller
+	r_wrist_yaw_position_controller
+	r_wrist_pitch_position_controller
+	l_shoulder_pitch_position_controller
+	l_shoulder_roll_position_controller
+	l_shoulder_yaw_position_controller
+	l_elbow_pitch_position_controller
+	l_wrist_yaw_position_controller
+	l_wrist_pitch_position_controller"/>
+
+<!--   <node name="joints_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/teo" args="
+	waist_yaw_position_controller
+	waist_pitch_position_controller
+	r_hip_yaw_position_controller
+	r_hip_roll_position_controller
+	r_hip_pitch_position_controller
+	r_knee_pitch_position_controller
+	r_ankle_pitch_position_controller
+	r_ankle_roll_position_controller
+	l_hip_yaw_position_controller
+	l_hip_roll_position_controller
+	l_hip_pitch_position_controller
+	l_knee_pitch_position_controller
+	l_ankle_pitch_position_controller
+	l_ankle_roll_position_controller
+	r_shoulder_pitch_position_controller
+	r_shoulder_roll_position_controller
+	r_shoulder_yaw_position_controller
+	r_elbow_pitch_position_controller
+	r_wrist_yaw_position_controller
+	r_wrist_pitch_position_controller
+	l_shoulder_pitch_position_controller
+	l_shoulder_roll_position_controller
+	l_shoulder_yaw_position_controller
+	l_elbow_pitch_position_controller
+	l_wrist_yaw_position_controller
+	l_wrist_pitch_position_controller"/> -->
+
+</launch>

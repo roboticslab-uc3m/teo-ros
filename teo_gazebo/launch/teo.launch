@@ -52,7 +52,11 @@
   <!-- TEO Controllers -->
   <include file="$(find teo_control)/launch/joint_state_controller.launch"/>
 
-  <include file="$(find teo_control)/launch/teo_position_controllers.launch"/>
+  <include file="$(find teo_control)/launch/teo_effort_controllers.launch"/>
+
+  <!-- <include file="$(find teo_control)/launch/teo_velocity_controllers.launch"/> -->
+
+  <!-- <include file="$(find teo_control)/launch/teo_position_controllers.launch"/> -->
 
 
 </launch>

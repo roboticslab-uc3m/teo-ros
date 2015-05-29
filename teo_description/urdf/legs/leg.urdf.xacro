@@ -43,37 +43,36 @@
 	<xacro:property name="ankle_roll_upper" value="${85 * deg_to_rad}" />
 
 <!-- Effort limit of the angles -->
-	<xacro:property name="hip_yaw_effort" value="30.0" />
-	<xacro:property name="hip_roll_effort" value="30.0" />
-	<xacro:property name="hip_pitch_effort" value="30.0" />
-	<xacro:property name="knee_pitch_effort" value="30.0" />
-	<xacro:property name="ankle_pitch_effort" value="30.0" />
-	<xacro:property name="ankle_roll_effort" value="30.0" />
-
+	<xacro:property name="hip_yaw_effort" value="45.0" />
+	<xacro:property name="hip_roll_effort" value="65.0" />
+	<xacro:property name="hip_pitch_effort" value="60.0" />
+	<xacro:property name="knee_pitch_effort" value="140.0" />
+	<xacro:property name="ankle_pitch_effort" value="85.0" />
+	<xacro:property name="ankle_roll_effort" value="65.0" />
 
 <!-- Velocity limit of the angles-->
-	<xacro:property name="hip_yaw_velocity" value="3.0" />
-	<xacro:property name="hip_roll_velocity" value="3.0" />
-	<xacro:property name="hip_pitch_velocity" value="3.0" />
-	<xacro:property name="knee_pitch_velocity" value="3.0" />
-	<xacro:property name="ankle_pitch_velocity" value="3.0" />
-	<xacro:property name="ankle_roll_velocity" value="3.0" />
+	<xacro:property name="hip_yaw_velocity" value="4.0" />
+	<xacro:property name="hip_roll_velocity" value="4.0" />
+	<xacro:property name="hip_pitch_velocity" value="4.0" />
+	<xacro:property name="knee_pitch_velocity" value="4.0" />
+	<xacro:property name="ankle_pitch_velocity" value="4.0" />
+	<xacro:property name="ankle_roll_velocity" value="4.0" />
 
 <!-- Damping of the joints-->
-	<xacro:property name="hip_yaw_damping" value="0.0" />
-	<xacro:property name="hip_roll_damping" value="0.0" />
-	<xacro:property name="hip_pitch_damping" value="0.0" />
-	<xacro:property name="knee_pitch_damping" value="0.0" />
-	<xacro:property name="ankle_pitch_damping" value="0.0" />
-	<xacro:property name="ankle_roll_damping" value="0.0" />
+	<xacro:property name="hip_yaw_damping" value="1.0" />
+	<xacro:property name="hip_roll_damping" value="1.0" />
+	<xacro:property name="hip_pitch_damping" value="1.0" />
+	<xacro:property name="knee_pitch_damping" value="1.0" />
+	<xacro:property name="ankle_pitch_damping" value="1.0" />
+	<xacro:property name="ankle_roll_damping" value="1.0" />
 
 <!-- Friction of the joints--> <!-- IT'S NOT USED IN GAZEBO-->
-	<xacro:property name="hip_yaw_friction" value="0.0" />
-	<xacro:property name="hip_roll_friction" value="0.0" />
-	<xacro:property name="hip_pitch_friction" value="0.0" />
-	<xacro:property name="knee_pitch_friction" value="0.0" />
-	<xacro:property name="ankle_pitch_friction" value="0.0" />
-	<xacro:property name="ankle_roll_friction" value="0.0" />
+	<xacro:property name="hip_yaw_friction" value="1.0" />
+	<xacro:property name="hip_roll_friction" value="1.0" />
+	<xacro:property name="hip_pitch_friction" value="1.0" />
+	<xacro:property name="knee_pitch_friction" value="1.0" />
+	<xacro:property name="ankle_pitch_friction" value="1.0" />
+	<xacro:property name="ankle_roll_friction" value="1.0" />
 
 <!-- Joint reductions-->
 	<xacro:property name="hip_yaw_reduction" value="1.0" />
@@ -222,7 +221,7 @@
 
   <xacro:legs_links side="l" reflect="1"/>
   <xacro:legs_links side="r" reflect="-1"/>  
-  <xacro:legs_joints side="l" reflect="1" effortTransmission="0" velocityTransmission="0" positionTransmission="1"/>
-  <xacro:legs_joints side="r" reflect="-1" effortTransmission="0" velocityTransmission="0" positionTransmission="1"/> 
+  <xacro:legs_joints side="l" reflect="1" effortTransmission="1" velocityTransmission="0" positionTransmission="0"/>
+  <xacro:legs_joints side="r" reflect="-1" effortTransmission="1" velocityTransmission="0" positionTransmission="0"/> 
 
 </robot>

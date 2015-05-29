@@ -15,104 +15,152 @@ teo:
 
   # Right Leg
   r_hip_yaw_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_hip_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_hip_roll_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_hip_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_hip_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_hip_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_knee_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_knee_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_ankle_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_ankle_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_ankle_roll_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_ankle_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
 
   # Left leg
   l_hip_yaw_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_hip_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_hip_roll_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_hip_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_hip_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_hip_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_knee_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_knee_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_ankle_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_ankle_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_ankle_roll_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_ankle_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
 
   # Right Arm
   r_shoulder_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_shoulder_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_shoulder_roll_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_shoulder_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_shoulder_yaw_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_shoulder_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_elbow_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_elbow_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_wrist_yaw_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_wrist_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   r_wrist_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: r_wrist_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
 
   # Left Arm
   l_shoulder_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_shoulder_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_shoulder_roll_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_shoulder_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_shoulder_yaw_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_shoulder_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_elbow_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_elbow_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_wrist_yaw_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_wrist_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
   l_wrist_pitch_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
+    # type: position_controllers/JointVelocityController
+    # type: position_controllers/JointEffortController
     joint: l_wrist_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
