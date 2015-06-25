@@ -18,10 +18,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
-      <geometry>
-        <box size="0.1 ${arm_link1} 0.1"/>
-      </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_shoulder_pitch.stl"/>
+      </geometry>
     </collision>
   </xacro:macro>
 
@@ -34,10 +34,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
-      <geometry>
-        <box size="0.1 ${arm_link1} 0.1"/>
-      </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_shoulder_roll.stl"/>
+      </geometry>
     </collision>
   </xacro:macro>
 
@@ -49,6 +49,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.12126"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_shoulder_yaw.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.27651"/>
       <geometry>
@@ -56,6 +62,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.27651"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_humerus.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.28351"/>
       <geometry>
@@ -64,10 +76,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.28351"/>
       <geometry>
-        <box size="0.08 0.08 ${arm_link2}"/>
+        <mesh filename="package://teo_description/meshes/arms/${side}_union_humerus_elbow.stl"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -${arm_link2/2}"/>
     </collision>
   </xacro:macro>
 
@@ -79,12 +91,25 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_elbow_pitch.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.11324"/>
       <geometry>
         <mesh filename="package://teo_description/meshes/arms/${side}_elbow_link.stl"/>
       </geometry>
+      <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.11324"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_elbow_link.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.11324"/>
       <geometry>
@@ -93,10 +118,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.11324"/>
       <geometry>
-        <box size="0.06 0.06 ${arm_link3}"/>
+        <mesh filename="package://teo_description/meshes/arms/${side}_union_elbow_wrist.stl"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -${arm_link3/2}"/>
     </collision>
   </xacro:macro>
 
@@ -109,10 +134,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.03 0.03 0.03"/>
+        <mesh filename="package://teo_description/meshes/arms/${side}_wrist_yaw.stl"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -0.015"/>
     </collision>
   </xacro:macro>
 
@@ -124,6 +149,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_wrist_pitch.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.056"/>
       <geometry>
@@ -131,6 +162,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.056"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/arms/${side}_wrist_sensorFT.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.056"/>
       <geometry>
@@ -139,10 +176,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.056"/>
       <geometry>
-        <box size="0.03 0.03 0.03"/>
+        <mesh filename="package://teo_description/meshes/arms/${side}_hand.stl"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -0.015"/>
     </collision>
   </xacro:macro>
 

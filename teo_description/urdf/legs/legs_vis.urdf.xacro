@@ -18,9 +18,9 @@
       <material name="teoGray"/>
     </visual>
     <collision>
-      <origin xyz="0 0 0.045" rpy="0 1.571 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder radius="0.045" length="0.13"/>
+        <mesh filename="package://teo_description/meshes/legs/${side}_hip_yaw.stl"/>
       </geometry>
     </collision>
   </xacro:macro>
@@ -33,6 +33,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_hip_pitch.stl"/>
+      </geometry>
+    </collision>
   </xacro:macro>
 
   <xacro:macro name="insert_visualization_femur_link" params="side reflect">
@@ -44,10 +50,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.1 0.1 ${leg_link2}"/>
+        <mesh filename="package://teo_description/meshes/legs/${side}_femur.stl"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 -${leg_link2/2}"/>
     </collision>
   </xacro:macro>
 
@@ -60,10 +66,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
       <geometry>
-        <box size="0.05 ${leg_link4} 0.05"/>
+        <mesh filename="package://teo_description/meshes/legs/${side}_tibia.stl"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 ${reflect*-leg_link4} -${leg_link3-0.05/2}"/>
     </collision>
   </xacro:macro>
 
@@ -75,6 +81,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_ankle_pitch.stl"/>
+      </geometry>      
+    </collision>
   </xacro:macro>
 
   <xacro:macro name="insert_visualization_ankle_roll" params="side reflect">
@@ -85,12 +97,24 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_ankle_roll.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.073"/>
       <geometry>
         <mesh filename="package://teo_description/meshes/legs/${side}_ankle_sensorFT.stl"/>
       </geometry>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.073"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_ankle_sensorFT.stl"/>
+      </geometry>
+    </collision>
   </xacro:macro>
 
   <xacro:macro name="insert_visualization_foot" params="side reflect">
@@ -102,11 +126,10 @@
       <material name="teoGray"/>
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!-- <box size="0.08 0.08 ${leg_link5}"/> -->
-        <box size="0.245438 0.139979 0.019500"/>
+        <mesh filename="package://teo_description/meshes/legs/${side}_foot.stl"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0.05 0 0.00975"/>
     </collision>
   </xacro:macro>
   
@@ -118,6 +141,12 @@
       </geometry>
       <material name="teoBlue"/>
     </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/legs/${side}_union_sensorFT_foot.stl"/>
+      </geometry>
+    </collision>
   </xacro:macro>
 
   <xacro:macro name="insert_visualization_sole" params="side reflect">

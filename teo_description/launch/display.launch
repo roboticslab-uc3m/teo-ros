@@ -16,10 +16,10 @@
   <!-- There is a problem with conditionals in xacro, for this reason the conditional is done here 20/08/2014 -->
   <!--param name="robot_description" command="$(find xacro)/xacro.py '$(find teo_description)/urdf/teo_humanoid.urdf.xacro' prefix:=$(arg simple_vis)" /-->
   <group if="$(arg simple_vis)">
-    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/urdf/teo_humanoid_simple_vis.urdf.xacro" /> 
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/robots/teo_humanoid_simple_vis.urdf.xacro" /> 
   </group>
   <group unless="$(arg simple_vis)">
-    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/urdf/teo_humanoid.urdf.xacro" /> 
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/robots/teo_humanoid.urdf.xacro" /> 
   </group>
 
   <!-- Using URDF directly -->

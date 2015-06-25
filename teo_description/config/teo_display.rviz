@@ -91,14 +91,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         l_shoulder_pitch_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         l_shoulder_roll_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         l_shoulder_yaw_link:
           Alpha: 1
           Show Axes: false
@@ -108,6 +111,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         l_tibia_link:
           Alpha: 1
           Show Axes: false
@@ -117,10 +121,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         l_wrist_yaw_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         r_ankle_pitch_link:
           Alpha: 1
           Show Axes: false
@@ -150,14 +156,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         r_shoulder_pitch_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         r_shoulder_roll_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         r_shoulder_yaw_link:
           Alpha: 1
           Show Axes: false
@@ -167,6 +176,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         r_tibia_link:
           Alpha: 1
           Show Axes: false
@@ -176,10 +186,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         r_wrist_yaw_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         waist:
           Alpha: 1
           Show Axes: false
@@ -233,6 +245,10 @@ Visualization Manager:
         l_wrist_pitch_link:
           Value: true
         l_wrist_yaw_link:
+          Value: true
+        map:
+          Value: true
+        odom:
           Value: true
         r_ankle_pitch_link:
           Value: true
@@ -306,6 +322,9 @@ Visualization Manager:
                         r_wrist_yaw_link:
                           r_wrist_pitch_link:
                             {}
+        map:
+          odom:
+            {}
       Update Interval: 0
       Value: true
     - Angle Tolerance: 0.1
@@ -321,7 +340,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -375,5 +394,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1363
-  X: 282
-  Y: 83
+  X: 198
+  Y: 143

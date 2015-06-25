@@ -19,10 +19,9 @@
       <material name="teoGray"/>
     </visual>
     <collision>
-      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.001" rpy="0 0 0"/>
       <geometry>
-         <!--sphere radius="1.0"/-->
-         <cylinder radius="0.02" length="0.06"/>
+        <mesh filename="package://teo_description/meshes/torso/waist-yaw.stl"/>
       </geometry>
     </collision>
   </xacro:macro>
@@ -36,11 +35,11 @@
       <material name="teoGray"/>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="${pi_2} 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <!--sphere radius="1.0"/-->
-        <cylinder radius="0.02" length="0.06"/>
+        <mesh filename="package://teo_description/meshes/torso/waist-pitch.stl"/>
       </geometry>
+      <material name="teoGray"/>
     </collision>
   </xacro:macro>
 
@@ -52,6 +51,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin xyz="0 0 ${torso_link2}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/torso/torso.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0 0.25486 ${torso_link2+chest_link2}" rpy="0 0 0"/>
       <geometry>
@@ -59,6 +64,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin xyz="0 0.25486 ${torso_link2+chest_link2}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/torso/L-torso-shoulder.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0 -0.25486 ${torso_link2+chest_link2}" rpy="0 0 0"/>
       <geometry>
@@ -66,6 +77,12 @@
       </geometry>
       <material name="LightGrey"/>
     </visual>
+    <collision>
+      <origin xyz="0 -0.25486 ${torso_link2+chest_link2}" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/torso/R-torso-shoulder.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0 0 0.346" rpy="0 0 0"/>
       <geometry>
@@ -73,6 +90,12 @@
       </geometry>
       <material name="LightGrey"/>
     </visual>
+    <collision>
+      <origin xyz="0 0 0.346" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/torso/neck.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0 0 0.434" rpy="0 0 0"/>
       <geometry>
@@ -81,9 +104,9 @@
       <material name="LightGrey"/>
     </visual>
     <collision>
-      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <origin xyz="0 0 0.434" rpy="0 0 0"/>
       <geometry>
-        <box size="0.18 0.42 0.292"/>
+        <mesh filename="package://teo_description/meshes/torso/head.stl"/>
       </geometry>
     </collision>
   </xacro:macro>
@@ -96,6 +119,12 @@
       </geometry>
       <material name="teoBlack"/>
     </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/torso/waist-base.stl"/>
+      </geometry>
+    </collision>
     <visual>
       <origin xyz="0 0 0.07336" rpy="0 0 0"/>
       <geometry>
@@ -103,6 +132,12 @@
       </geometry>
       <material name="teoGray"/>
     </visual>
+    <collision>
+      <origin xyz="0 0 0.07336" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://teo_description/meshes/torso/waist-link.stl"/>
+      </geometry>
+    </collision>
   </xacro:macro>
 
 </robot>

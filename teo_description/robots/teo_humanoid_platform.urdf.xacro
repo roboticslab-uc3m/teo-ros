@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+  ROS urdf definition of TEO humanoid robot
+  
+  Author: Domingo Esteban
+  RoboticsLab, Universidad Carlos III de Madrid
+  
+  This file loads TEO model with a basic visualization.
+
+  If you want to convert this xacro file into an urdf file:
+  $ rosrun xacro xacro.py teo_humanoid_simple_vis.urdf.xacro > teo_humanoid.urdf
+
+	If you want to generate a SDF file from the generated URDF: (Requires gazebo)
+	$ gzsdf print teo_humanoid.urdf > teo_humanoid.sdf
+-->
+
+<robot name="teo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- TEO parameters -->
+  <xacro:property name="use_static_platform" value="true" />
+
+  <!-- TEO structure -->
+  <xacro:include filename="$(find teo_description)/urdf/teo_structure.urdf.xacro" />
+
+  <!-- TEO visualization -->
+  <!--xacro:if value="$(arg simple_vis)">
+    <xacro:include filename="$(find teo_description)/urdf/others/simple_visual.xacro" />
+  </xacro:if-->
+  <!--xacro:unless complete_vis="$(arg complete_vis)">
+    <xacro:include filename="$(find teo_description)/urdf/others/visualization.xacro" />
+  </xacro:unless-->
+
+  <!--xacro:include filename="$(find teo_description)/urdf/visual.xacro" /-->
+  <xacro:include filename="$(find teo_description)/urdf/others/teo_colors.xacro" />
+  <xacro:include filename="$(find teo_description)/urdf/torso/torso_vis.urdf.xacro" />
+  <xacro:include filename="$(find teo_description)/urdf/legs/legs_vis.urdf.xacro" />
+  <xacro:include filename="$(find teo_description)/urdf/arms/arms_vis.urdf.xacro" />
+
+</robot>

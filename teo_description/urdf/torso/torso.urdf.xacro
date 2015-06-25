@@ -84,7 +84,7 @@
     <xacro:insert_visualization_waist_yaw/>
   </link>
 
-  <link name="waist_pitch_link" >
+<!--   <link name="waist_pitch_link" >
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="20.0"/>
@@ -95,7 +95,7 @@
     </inertial>
     <xacro:insert_visualization_waist_pitch/>
     <xacro:insert_visualization_torso/>
-  </link>
+  </link> -->
 
 
   <!-- Joints -->
@@ -107,14 +107,14 @@
     <limit velocity="${waist_yaw_velocity}" effort="${waist_yaw_effort}" lower="${waist_yaw_lower}" upper="${waist_yaw_upper}"/>
   </joint>
 
-  <joint name="waist_pitch" type="revolute">
+<!--   <joint name="waist_pitch" type="revolute">
     <parent link="waist_yaw_link"/>
     <child link="waist_pitch_link"/>
     <origin xyz="-${torso_link1} 0 0" rpy="0 0 0" />
     <axis xyz="0 1 0"/>
     <limit velocity="${waist_pitch_velocity}" effort="${waist_pitch_effort}" lower="${waist_pitch_lower}" upper="${waist_pitch_upper}"/>
-  </joint>
+  </joint> -->
 
-    <xacro:waist_joint_simple_transmission axis="yaw" reduction="${waist_yaw_reduction}"/>
-    <xacro:waist_joint_simple_transmission axis="pitch" reduction="${waist_pitch_reduction}"/>
+  <xacro:waist_joint_simple_transmission axis="yaw" reduction="${waist_yaw_reduction}"/>
+  <!-- <xacro:waist_joint_simple_transmission axis="pitch" reduction="${waist_pitch_reduction}"/> -->
 </robot>

@@ -6,7 +6,7 @@
 
   <arg name="robot_initial_pose/x" default="0.0"/>
   <arg name="robot_initial_pose/y" default="0.0"/>
-  <arg name="robot_initial_pose/z" default="0.856"/>
+  <arg name="robot_initial_pose/z" default="0.0"/>
   <arg name="robot_initial_pose/roll" default="0.0"/>
   <arg name="robot_initial_pose/pitch" default="0.0"/>
   <arg name="robot_initial_pose/yaw" default="0.0"/>
@@ -21,7 +21,7 @@
     <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/robots/teo_humanoid_simple_vis.urdf.xacro" /> 
   </group>
   <group unless="$(arg simple_vis)">
-    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/robots/teo_humanoid.urdf.xacro" /> 
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find teo_description)/robots/teo_humanoid_platform.urdf.xacro" /> 
   </group>
 
 

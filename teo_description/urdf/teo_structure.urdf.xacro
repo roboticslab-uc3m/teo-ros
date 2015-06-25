@@ -21,31 +21,34 @@
 
 <!-- Include useful constants -->
 <xacro:include filename="$(find teo_description)/urdf/others/teo_constants.xacro" />
+<!-- Include joint transmissions -->
 <xacro:include filename="$(find teo_description)/urdf/others/teo_transmission.xacro" />
 
-<!-- **** Torso **** -->
 
-  <!-- base_link is rigidly attached to the robot root body.
-  It is recommended to choose the robot waist as its root body -->
-  <link name="base_link" />
+<!-- Use TEO platform -->
+<xacro:if value="${use_static_platform}">
+  <xacro:include filename="$(find teo_description)/urdf/others/teo_platform.xacro" />
+</xacro:if>
 
-<!--***************
-    **** JOINTS ****
-    ***************-->
+<!-- **** Torso - base_link **** -->
+
+<!-- base_link is rigidly attached to the robot root body.
+It is recommended to choose the robot waist as its root body -->
+<link name="base_link" />
 
 <!-- **** Fictitious joints **** -->
-
-  <joint name="base_joint" type="fixed">
-    <child link="waist"/>
-    <parent link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </joint>
+<joint name="base_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="waist"/>
+  <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
 
 
  <!-- Definitions of parts of the robot body -->
  <xacro:include filename="$(find teo_description)/urdf/torso/torso.urdf.xacro" />
  <xacro:include filename="$(find teo_description)/urdf/legs/leg.urdf.xacro" />
- <xacro:include filename="$(find teo_description)/urdf/arms/arm.urdf.xacro" />
+ <!-- <xacro:include filename="$(find teo_description)/urdf/arms/arm.urdf.xacro" /> -->
+
 
 
 <!--****************
@@ -53,12 +56,12 @@
     ****************-->
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find teo_description)/urdf/teo_humanoid.gazebo.xacro" />
+  <xacro:include filename="$(find teo_description)/urdf/teo_structure.gazebo.xacro" />
 
   <xacro:gazebo_torso/>
   <xacro:gazebo_legs_links side="l" reflect="1"/>
   <xacro:gazebo_legs_links side="r" reflect="-1"/>
-  <xacro:gazebo_arms_links side="l" reflect="1"/>
-  <xacro:gazebo_arms_links side="r" reflect="-1"/>
+<!--   <xacro:gazebo_arms_links side="l" reflect="1"/>
+  <xacro:gazebo_arms_links side="r" reflect="-1"/> -->
 
 </robot>
