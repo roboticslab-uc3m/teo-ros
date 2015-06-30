@@ -16,6 +16,9 @@
 <robot name="teo" xmlns:xacro="http://ros.org/wiki/xacro">
 
 <!-- *** TEO LEG PARAMETERS -->
+  <xacro:property name="prop_kg_motor_vol_unit" value="6229.073482" /> <!-- Relation Kg - Volume Unit -->
+  <xacro:property name="prop_kg_femur_vol_unit" value="330.0519062" /> <!-- Relation Kg - Volume Unit -->
+  <xacro:property name="prop_kg_tibia_vol_unit" value="2638.403042" /> <!-- Relation Kg - Volume Unit -->
 
 <!-- Link lengths -->
 	<xacro:property name="leg_link0" value="0.10237" /> <!-- Hip -->
@@ -89,57 +92,61 @@
   <xacro:macro name="legs_links" params="side reflect">
     <link name="${side}_hip_yaw_link">
       <inertial>
-        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
-        <mass value="0.001"/>
-        <inertia ixx="0.00132187534" ixy="0.00000001514" ixz="0.00040022268" iyy="0.0018528617" iyz="0.00000050713" izz="0.00084231334"/>
+        <origin xyz="0.0 ${-reflect*0.0} 0.0" rpy="0 0 0"/>
+        <!-- <mass value="0.001"/> -->
+        <mass value="${prop_kg_motor_vol_unit*0.000185}"/>
+        <inertia ixx="0.00132187534" ixy="${-reflect*0.00000001514}" ixz="0.00040022268" iyy="0.0018528617" iyz="${-reflect*0.00000050713}" izz="0.00084231334"/>
       </inertial>
 			<xacro:insert_visualization_hip_yaw side="${side}" reflect="{reflect}"/>
     </link>
     <link name="${side}_hip_roll_link">
       <inertial>
-        <origin xyz="-0.029398 ${reflect*0.001062} -0.017753" rpy="0 0 0"/>
-        <mass value="0.001"/>
-        <inertia ixx="0.0008416476" ixy="-0.00000268743" ixz="0.00000667199" iyy="0.00039794844" iyz="0.00002668971" izz="0.00084196694"/>
+        <origin xyz="-0.029398 ${-reflect*0.001062} -0.017753" rpy="0 0 0"/>
+        <!-- <mass value="0.001"/> -->
+        <mass value="${prop_kg_motor_vol_unit*0.000317}"/>
+        <inertia ixx="0.0008416476" ixy="${-reflect*-0.00000268743}" ixz="0.00000667199" iyy="0.00039794844" iyz="${-reflect*0.00002668971}" izz="0.00084196694"/>
       </inertial>
 			<xacro:insert_visualization_hip_pitch side="${side}" reflect="{reflect}"/>
     </link>
     <link name="${side}_femur_link">
       <inertial>
-        <origin xyz="${0.013-0.008362} ${reflect*0.000115} ${-leg_link2+0.167156}" rpy="0 0 0"/>
-        <mass value="1.844"/>
-        <inertia ixx="0.00507885174" ixy="-0.00034076421" ixz="-0.00225952731" iyy="0.02850097402" iyz="0.00003047874" izz="0.02632392239"/>
+        <origin xyz="${0.013-0.008362} ${-reflect*0.000115} ${-leg_link2+0.167156}" rpy="0 0 0"/>
+        <!-- <mass value="1.844"/> -->
+        <mass value="${prop_kg_femur_vol_unit*0.005587}"/>
+        <inertia ixx="0.00507885174" ixy="${-reflect*-0.00034076421}" ixz="-0.00225952731" iyy="0.02850097402" iyz="${-reflect*0.00003047874}" izz="0.02632392239"/>
       </inertial>
       <xacro:insert_visualization_femur_link side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_tibia_link">
       <inertial>
-        <origin xyz="${-0.013-0.001019} ${reflect*(-(leg_link4)+0.024670)} ${-leg_link3+0.127850}" rpy="0 0 0"/>
-        <mass value="2.0817"/>
-        <inertia ixx="0.00361006492" ixy="0.00012218208" ixz="0.00160208242" iyy="0.02470649045" iyz="0.00008129755" izz="0.02272322206"/>
+        <origin xyz="${-0.013-0.001019} ${-reflect*(-(leg_link4)+0.024670)} ${-leg_link3+0.127850}" rpy="0 0 0"/>
+        <!-- <mass value="2.0817"/> -->
+        <mass value="${prop_kg_femur_vol_unit*0.005587}"/>
+        <inertia ixx="0.00361006492" ixy="${-reflect*0.00012218208}" ixz="0.00160208242" iyy="0.02470649045" iyz="${-reflect*0.00008129755}" izz="0.02272322206"/>
       </inertial>
       <xacro:insert_visualization_tibia_link side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_ankle_pitch_link">
       <inertial>
-        <origin xyz="0.004952 ${reflect*-0.005263} 0.028198" rpy="0 0 0"/>
+        <origin xyz="0.004952 ${-reflect*-0.005263} 0.028198" rpy="0 0 0"/>
         <mass value="1.0"/>
-        <inertia ixx="0.00082035023" ixy="0.00000048534" ixz="0.00000226301" iyy="0.00082074105" iyz="-0.00002892247" izz="0.00037614067"/>
+        <inertia ixx="0.00082035023" ixy="${-reflect*0.00000048534}" ixz="0.00000226301" iyy="0.00082074105" iyz="${-reflect*-0.00002892247}" izz="0.00037614067"/>
       </inertial>
       <xacro:insert_visualization_ankle_pitch side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_astragalus_link">
       <inertial>
-        <origin xyz="0.018179 ${reflect*0.003551} -0.075080" rpy="0 0 0"/>
-        <mass value="3.8994"/>
-        <inertia ixx="0.00366502559" ixy="0.00020479295" ixz="0.00112439297" iyy="0.00532618026" iyz="0.00012133755" izz="0.00353091463"/>
+        <origin xyz="-0.006788 ${-reflect*0.000020} -0.042127" rpy="0 0 0"/>
+        <mass value="1.015338978"/>
+        <inertia ixx="0.00026324" ixy="${-reflect*0.0}" ixz="0.0000074" iyy="0.000571" iyz="${-reflect*0}" izz="0.0004633"/>
       </inertial>
       <xacro:insert_visualization_ankle_roll side="${side}" reflect="${reflect}"/>
     </link>
     <link name="${side}_sole">
       <inertial>
-        <origin xyz="0.0 ${reflect*0.0} 0.0" rpy="0 0 0"/>
-        <mass value="0.001"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        <origin xyz="0.022629 ${-reflect*0.002448} 0.011325" rpy="0 0 0"/>
+        <mass value="2.884061022"/>
+        <inertia ixx="0.006699" ixy="${-reflect*-0.00009295}" ixz="0.00009066" iyy="0.00169929" iyz="${-reflect*0.00000708}" izz="0.00228359"/>
       </inertial>
       <xacro:insert_visualization_foot side="${side}" reflect="${reflect}"/>
       <xacro:insert_visualization_union_sensorFT_foot side="${side}" reflect="${reflect}"/>

@@ -1,0 +1,616 @@
+{
+  "keys": {}, 
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr", 
+          "repr": "{u'rqt_reconfigure/Param': [1], u'rqt_plot/Plot': [7, 12, 11, 10, 9, 8, 6, 5, 4, 3, 2, 1], u'rqt_publisher/Publisher': [1]}"
+        }
+      }, 
+      "groups": {
+        "plugin__rqt_plot__Plot__8": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/l_hip_roll_position_controller/command/data', u'/teo/l_hip_roll_position_controller/state/process_value']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.49807996385814324, 0.5019200361418568]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[33.422, 34.422]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__9": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/l_hip_pitch_position_controller/command/data', u'/teo/l_hip_pitch_position_controller/state/process_value']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.4472554777501695, 0.5527445222498306]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[36.443, 37.443]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_reconfigure__Param__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget___plugincontainer_top_widget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000013e0000011a01000000060100000001')", 
+                  "pretty-print": "       >       "
+                }, 
+                "_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000000000020000013e0000006401000000090100000002')", 
+                  "pretty-print": "       > d     "
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/r_hip_yaw_position_controller/command/data', u'/teo/r_hip_yaw_position_controller/state/process_value']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-2.03428035074779, 1.9970219122633637]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[102.81800000000001, 103.81800000000001]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__2": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/r_hip_roll_position_controller/state/process_value', u'/teo/r_hip_roll_position_controller/command/data']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.5002748321053888, 0.5111910819179547]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[51.245999999999995, 52.245999999999995]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__3": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/r_hip_pitch_position_controller/state/process_value', u'/teo/r_hip_pitch_position_controller/command/data']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.49621248441844845, 0.5037875155815515]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[49.293000000000006, 50.293000000000006]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__4": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/r_knee_pitch_position_controller/state/process_value', u'/teo/r_knee_pitch_position_controller/command/data']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.5134720490938727, 0.4865279509061272]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[47.229, 48.229]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__5": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/r_ankle_pitch_position_controller/state/process_value', u'/teo/r_ankle_pitch_position_controller/command/data']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.5048422667561606, 0.4951577332438394]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[45.63300000000001, 46.63300000000001]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__6": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/r_ankle_roll_position_controller/command/data', u'/teo/r_ankle_roll_position_controller/state/process_value']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.49621248441844845, 0.5037875155815515]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[135.114, 136.114]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__7": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/l_hip_yaw_position_controller/command/data', u'/teo/l_hip_yaw_position_controller/state/process_value']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.4929975152473458, 0.5070024847526542]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[30.694999999999993, 31.694999999999993]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_publisher__Publisher__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__PublisherWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr", 
+                  "repr": "u\"[{'topic_name': '/teo/r_ankle_roll_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {u'/teo/r_ankle_roll_position_controller/command/data': '0.0'}, 'publisher_id': 0, 'counter': 0}, {'topic_name': '/teo/l_ankle_roll_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 1, 'counter': 0}, {'topic_name': '/teo/r_ankle_pitch_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 2, 'counter': 0}, {'topic_name': '/teo/l_ankle_pitch_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 3, 'counter': 0}, {'topic_name': '/teo/r_knee_pitch_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 4, 'counter': 0}, {'topic_name': '/teo/l_knee_pitch_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 5, 'counter': 0}, {'topic_name': '/teo/r_hip_pitch_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 6, 'counter': 0}, {'topic_name': '/teo/l_hip_pitch_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 7, 'counter': 0}, {'topic_name': '/teo/r_hip_roll_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 8, 'counter': 0}, {'topic_name': '/teo/l_hip_roll_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 9, 'counter': 0}, {'topic_name': '/teo/r_hip_yaw_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 10, 'counter': 0}, {'topic_name': '/teo/l_hip_yaw_position_controller/command', 'type_name': 'std_msgs/Float64', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 11, 'counter': 0}, {'type_name': 'std_msgs/Float64', 'topic_name': '/teo/waist_yaw_position_controller/command', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 12, 'counter': 0}, {'type_name': 'std_msgs/Float64', 'topic_name': '/teo/waist_pitch_position_controller/command', 'enabled': False, 'rate': 50.0, 'expressions': {}, 'publisher_id': 13, 'counter': 0}]\""
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__12": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/l_ankle_roll_position_controller/state/process_value', u'/teo/l_ankle_roll_position_controller/command/data']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.47775016941495374, 0.5222498305850464]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[42.40599999999999, 43.40599999999999]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__10": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/l_knee_pitch_position_controller/command/data', u'/teo/l_knee_pitch_position_controller/state/process_value']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.5184097583013327, 0.48159024169866727]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[38.272999999999996, 39.272999999999996]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__11": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__DataPlotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "2"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "[u'/teo/l_ankle_pitch_position_controller/state/process_value', u'/teo/l_ankle_pitch_position_controller/command/data']"
+                }, 
+                "y_limits": {
+                  "type": "repr", 
+                  "repr": "[-0.47775016941495374, 0.5222498305850464]"
+                }, 
+                "x_limits": {
+                  "type": "repr", 
+                  "repr": "[40.34, 41.34]"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }
+      }
+    }, 
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00010000000000370000001100000727000003dc00000041000000370000071d000003d2000000000000')", 
+          "pretty-print": "     7   '   A 7       "
+        }, 
+        "state": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd0000000100000003000006dd0000036dfc0100000001fc00000000000006dd000003e300fffffffc0100000002fc00000000000002fc0000026600fffffffc0200000002fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000019000001ae0000009300fffffffb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f00770069006400670065007401000001cd000001b90000010f00fffffffc00000302000003db0000017700fffffffc0200000002fc00000019000001c5000001610100001dfa000000000100000006fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0032005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0033005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0034005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0035005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0036005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffc000001e4000001a2000001610100001dfa000000000100000006fb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0037005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0038005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0039005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000044007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f00310030005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000044007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f00310031005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700fffffffb00000044007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f00310032005f005f00440061007400610050006c006f00740057006900640067006500740100000000ffffffff0000017700ffffff000006dd0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                                        Xrqt_publisher__Publisher__1__PublisherWidget          lrqt_reconfigure__Param__1___plugincontainer_top_widget              w                    Brqt_plot__Plot__1__DataPlotWidget          Brqt_plot__Plot__2__DataPlotWidget          Brqt_plot__Plot__3__DataPlotWidget          Brqt_plot__Plot__4__DataPlotWidget          Brqt_plot__Plot__5__DataPlotWidget          Brqt_plot__Plot__6__DataPlotWidget              a                                                w                                           w                                           w                                            w                                            w                                            w                                                          "
+        }
+      }, 
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr", 
+              "repr": "8"
+            }
+          }, 
+          "groups": {}
+        }
+      }
+    }
+  }
+}

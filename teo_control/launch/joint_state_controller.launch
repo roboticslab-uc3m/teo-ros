@@ -7,21 +7,12 @@
   <!-- load the controllers -->
   <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" ns="/teo" args="joint_state_controller"/>
-    <!-- output="screen" ns="/teo" args="joint_state_controller"/> -->
 
-    <!-- ns="$(arg namespace)"/> -->
-    
-<!--   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-    <remap from="/joint_states" to="/teo/joint_states"/>
-  </node> -->
-
+  <!-- robot_state_punlisher node -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="100.0" />
+    <!-- <param name="publish_frequency" type="double" value="50.0" /> -->
     <remap from="/joint_states" to="/teo/joint_states"/>
   </node>
   
-  <!-- <node pkg="nodelet" type="nodelet" name="summit_nodelet_manager" args="manager"/> -->
-
-
 </launch>
