@@ -24,13 +24,16 @@
         <geometry>
           <plane>
             <normal>0 0 1</normal>
-            <size>100 100</size>
+            <size>50 50</size>
           </plane>
         </geometry>
         <material>
           <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Black</name>
+            <!-- <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name> -->
+            <uri>file://media/materials/scripts/uc3m.material</uri>
+            <!-- <uri>file://media/materials/textures</uri> -->
+            <name>UC3M/uc3mLogo</name>
           </script>
         </material>
       </visual>

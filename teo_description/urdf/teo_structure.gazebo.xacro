@@ -16,13 +16,13 @@
 		<gazebo reference="waist_yaw_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 		<gazebo reference="waist_pitch_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 <!-- 		<gazebo reference="waist">
@@ -41,31 +41,31 @@
 		<gazebo reference="${side}_hip_roll_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 		<gazebo reference="${side}_hip_yaw_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 		<gazebo reference="${side}_femur_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 		<gazebo reference="${side}_tibia_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 		<gazebo reference="${side}_ankle_pitch_link">
 			<mu1>0.9</mu1>
 			<mu2>0.9</mu2>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 		<gazebo reference="${side}_astragalus_link">
@@ -77,7 +77,7 @@
 			<maxVel>1.0</maxVel>
 			<minDepth>0.00</minDepth>
 			<implicitSpringDamper>1</implicitSpringDamper>
-			<material>Gazebo/White</material>
+			<!-- <material>Gazebo/White</material> -->
 		</gazebo>
 
 		<gazebo reference="${side}_sole">
@@ -86,7 +86,7 @@
 	    <fdir1>1 0 0</fdir1>
 	    <maxVel>1.0</maxVel>
 	    <minDepth>0.003</minDepth>
-	    <material>Gazebo/White</material>
+	    <!-- <material>Gazebo/White</material> -->
 		</gazebo>
   </xacro:macro>  
 

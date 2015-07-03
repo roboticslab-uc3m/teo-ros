@@ -1,0 +1,56 @@
+material UC3M/uc3mLogo
+{
+  receive_shadows on
+
+  technique
+  {
+    pass
+    {
+      ambient 0.5 0.5 0.5 1.000000
+
+      texture_unit
+      {
+        texture uc3m_blue_logo.jpg
+        scale .01 .01
+      }
+    }
+  }
+}
+
+material UC3M/Floor1
+{
+  receive_shadows on
+
+  technique
+  {
+    pass
+    {
+      ambient 0.5 0.5 0.5 1.000000
+
+      texture_unit
+      {
+        texture floor1.jpg
+        scale .01 .01
+      }
+    }
+  }
+}
+
+material UC3M/Aluminum1
+{
+  receive_shadows on
+
+  technique
+  {
+    pass
+    {
+      ambient 0.5 0.5 0.5 1.000000
+
+      texture_unit
+      {
+        texture aluminum1.jpg
+        scale .01 .01
+      }
+    }
+  }
+}

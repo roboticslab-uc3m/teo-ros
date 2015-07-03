@@ -3,7 +3,7 @@
   <arg name="robot_name" default="teo"/>
 
   <!-- Arguments for Gazebo World --> <!--Example: paused:=true -->
-  <arg name="paused" default="true"/>
+  <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
@@ -11,7 +11,7 @@
 
 
   <!-- Arguments for Spawn Robot -->
-  <arg name="robot_initial_pose/x" default="0.0"/>
+  <arg name="robot_initial_pose/x" default="10.0"/>
   <arg name="robot_initial_pose/y" default="0.0"/>
   <arg name="robot_initial_pose/z" default="0.856"/>
   <arg name="robot_initial_pose/roll" default="0.0"/>

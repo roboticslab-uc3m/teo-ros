@@ -110,6 +110,13 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+add_executable(set_same_value src/set_same_value.cpp)
+
+target_link_libraries(set_same_value
+  ${catkin_LIBRARIES}
+)
+
+
 #############
 ## Install ##
 #############
