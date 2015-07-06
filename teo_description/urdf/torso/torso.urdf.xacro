@@ -62,13 +62,21 @@
   <!-- Links -->
   <link name="waist" >
     <inertial>
-      <origin xyz="0.0 0.0 0.0337" rpy="0 0 0"/>
+      <origin xyz="-0.011195 0.000002 0.030531" rpy="0 0 0"/>
       <mass value="5.7044"/>
       <inertia
 			  ixx="0.019" ixy="0.000" ixz="0.000"
 				iyy="0.018" iyz="0.000"
 				izz="0.008" />
     </inertial>
+<!--     <inertial>
+      <origin xyz="-0.011195 0.000002 0.030531" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia
+        ixx="1.672965e-5" ixy="-4.1e-10" ixz="-4.0359e-7"
+        iyy="8.75441e-6" iyz="8.0e-11"
+        izz="0.000020584" />
+    </inertial> -->
     <xacro:insert_visualization_waist/>
   </link>
 

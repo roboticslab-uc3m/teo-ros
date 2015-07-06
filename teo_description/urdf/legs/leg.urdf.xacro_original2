@@ -95,7 +95,7 @@
         <origin xyz="0.0 ${-reflect*0.0} 0.0" rpy="0 0 0"/>
         <!-- <mass value="0.001"/> -->
         <mass value="${prop_kg_motor_vol_unit*0.000185}"/>
-        <inertia ixx="3.4076e-7" ixy="${-reflect*0.0}" ixz="5.4e-10" iyy="5.7638e-7" iyz="${-reflect*3.7186e-7}" izz="0.00084231334"/>
+        <inertia ixx="0.00132187534" ixy="${-reflect*0.00000001514}" ixz="0.00040022268" iyy="0.0018528617" iyz="${-reflect*0.00000050713}" izz="0.00084231334"/>
       </inertial>
 			<xacro:insert_visualization_hip_yaw side="${side}" reflect="{reflect}"/>
     </link>
