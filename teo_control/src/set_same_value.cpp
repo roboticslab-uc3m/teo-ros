@@ -131,6 +131,32 @@ int main(int argc, char **argv)
           joint11_command_to_ROS.publish(joint_command);
 
           joint12_command_to_ROS.publish(joint_command);
+
+          joint13_command_to_ROS.publish(joint_command);
+
+          joint14_command_to_ROS.publish(joint_command);
+
+          joint15_command_to_ROS.publish(joint_command);
+
+          joint16_command_to_ROS.publish(joint_command);
+
+          joint17_command_to_ROS.publish(joint_command);
+
+          joint18_command_to_ROS.publish(joint_command);
+
+          joint19_command_to_ROS.publish(joint_command);
+
+          joint20_command_to_ROS.publish(joint_command);
+
+          joint21_command_to_ROS.publish(joint_command);
+
+          joint22_command_to_ROS.publish(joint_command);
+
+          joint23_command_to_ROS.publish(joint_command);
+
+          joint24_command_to_ROS.publish(joint_command);
+
+          joint25_command_to_ROS.publish(joint_command);
       }
 
 

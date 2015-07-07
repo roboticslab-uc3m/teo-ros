@@ -11,8 +11,9 @@
 
 
   <!-- Arguments for Spawn Robot -->
-  <arg name="robot_initial_pose/x" default="10.0"/>
+  <arg name="robot_initial_pose/x" default="0.0"/>
   <arg name="robot_initial_pose/y" default="0.0"/>
+  <!-- <arg name="robot_initial_pose/z" default="0.9"/> -->
   <arg name="robot_initial_pose/z" default="0.856"/>
   <arg name="robot_initial_pose/roll" default="0.0"/>
   <arg name="robot_initial_pose/pitch" default="0.0"/>
