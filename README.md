@@ -1,4 +1,4 @@
-teo_robot
+teo-ros
 =========
 
 ROS packages for TEO humanoid robot.
